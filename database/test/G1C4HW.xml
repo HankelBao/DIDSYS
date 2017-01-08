@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<SflsG1C4HW>
+    <HWRecord date="2016/12/22">
+        <subject sub="All" num="0"/>
+        <subject sub="Eng" num="0"/>
+        <subject sub="EcoChi" num="0"/>
+        <subject sub="EcoFor" num="0"/>
+        <subject sub="MathsChi" num="0"/>
+        <subject sub="MathsFor" num="0"/>
+        <subject sub="PhyChi" num="0"/>
+        <subject sub="PhyFor" num="0"/>
+        <subject sub="ChemChi" num="0"/>
+        <subject sub="ChemFor" num="0"/>
+    </HWRecord>
+    
+    <HWRecord date="2016/12/14">
+        <subject sub="All" num="3"><record><due/><description>test3</description></record><record><due/><description>Ok</description></record><record><due/><description>Ok2</description></record></subject>
+        <subject sub="Eng" num="0"/>
+        <subject sub="EcoChi" num="0"/>
+        <subject sub="EcoFor" num="0"/>
+        <subject sub="MathsChi" num="0"/>
+        <subject sub="MathsFor" num="0"/>
+        <subject sub="PhyChi" num="0"/>
+        <subject sub="PhyFor" num="0"/>
+        <subject sub="ChemChi" num="0"/>
+        <subject sub="ChemFor" num="0"/>
+    </HWRecord>
+    
+    <HWRecord date="2016/12/12">
+        <subject sub="Eng" num="3">
+            <record>
+                <due>2016/12/13</due>
+                <description>This is just an example</description>
+            </record>
+            <record>
+                <description>listening and recording</description>
+            </record>
+            <record>
+                <description>translation</description>
+            </record>
+        <record>test<due/><description>Hhhhh</description></record><record><due/><description>New</description></record><record><due/><description>test2</description></record><record><due>2016/12/13</due><description>Lalalalalalllaa</description></record><record><due/><description>123456789</description></record></subject>
+    </HWRecord>
+</SflsG1C4HW>

@@ -1,0 +1,55 @@
+.LeftNav {
+	position:fixed;
+	width:30%;
+	height:100%;
+	
+	border-right:1px solid rgb(163, 171, 179);
+}
+
+.ToolBar {
+	width:auto;
+	height:50px;
+	
+	background-color: rgb(E0, E0, E0);
+	
+	line-height: 50px;
+	font-size:25px;
+
+}
+
+.DateBar {
+    color:rgb(E0, E0, E0);
+    background-color: rgb(221, 76, 79);
+}
+
+.SubjectBar {
+	width:100%;
+	height:auto;
+}
+
+.SubjectBarL{
+	width:100%;
+	height:50px;
+}
+
+.SubjectBarL-active{
+	border-left:5px solid rgb(221, 76, 79);
+}
+.SubjectBarS{
+	float:right;
+	width:90%;
+	
+	border-bottom:1px solid rgb(163, 171, 179);
+	
+	height:50px; 
+	line-height:50px; 
+}
+
+.SubjectLabel{
+	
+}
+
+.SubNumLabel {
+	float:right;
+	margin-right:5px;
+}

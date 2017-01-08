@@ -1,2 +1,2 @@
-# DIDSYS
-Sfls DID Manage Sys Web Client Code
+#SFLSHwSys
+A website helping the students and the teachers to manage their homework
