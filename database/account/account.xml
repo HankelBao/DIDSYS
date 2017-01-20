@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<SflsHwAccount>
-	<user name="master" type="mas">arche</user>
-	<user name="masterStu" type="stu">arche</user>
-	<user name="masterTea" type="tea">arche</user>
-	
-	<user name="hankel1.4" type="stu">arche</user>
-	<user name="frank1.4" type="stu">123456</user>
-</SflsHwAccount>
