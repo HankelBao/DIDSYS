@@ -4,7 +4,7 @@
     <body>
         <?php
             require('database/databaseConnect.php');
-            require('database/searchSerial.php');
+            require('database/serialSearch.php');
             $result = mysqli_query($connection, 'SELECT * FROM subject');
             if ($result == False) {
                 echo('null database');
@@ -39,7 +39,7 @@
                 echo "</th>";
                 for ($j = 0; $j < count($subject); $j++) {
                     echo "<th>";
-                    $row = searchSerial($connection, date('y-m-d',time()), $sub_id[$j], $cla_id[$i]);
+                    $row = serialSearch($connection, date('y-m-d',time()), $sub_id[$j], $cla_id[$i]);
                     echo $row['score'];
                     echo "</th>";
                 }
