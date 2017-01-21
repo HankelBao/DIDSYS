@@ -40,7 +40,8 @@
                 for ($j = 0; $j < count($subject); $j++) {
                     echo "<th>";
                     $row = serialSearch($connection, date('y-m-d',time()), $sub_id[$j], $cla_id[$i]);
-                    echo $row['score'];
+                    if ($row != "null")
+                        echo $row['score'];
                     echo "</th>";
                 }
                 echo "</tr>";
