@@ -1,7 +1,4 @@
-<html>
-    <head>
-    </head>
-    <body>
+
         <?php
             require('database/databaseConnect.php');
             require('database/serialSearch.php');
@@ -50,5 +47,3 @@
             
             require('database/databaseClose.php');
         ?>
-    </body>
-</html>

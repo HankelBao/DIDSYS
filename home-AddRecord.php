@@ -1,8 +1,4 @@
-<html>
-    <head>
-    </head>
-    <body>
-        <?php
+       <?php
             require('database/databaseConnect.php');
             $result = mysqli_query($connection, 'SELECT * FROM subject');
             if ($result == False) {
@@ -57,5 +53,3 @@
             
             require('database/databaseClose.php');
         ?>
-    </body>
-</html>

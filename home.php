@@ -6,7 +6,18 @@
         <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
         <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
         <link type="text/css" rel="stylesheet" href="theme/home.css"/>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <script>
+        $(document).ready(function(){
+            $("#type-tourist").click(function(){
+                $('#main-nav').load('home-RecordDaily.php');
+            });
+            $("#type-scorer").click(function(){
+                $('#main-nav').load('home-AddRecord.php');
+            });
+        });
+        </script>
     </head>
     <body>
         <div class="top-nav">
@@ -16,10 +27,10 @@
         </div>
         <div class="bottom-nav">
             <div class="side-nav">
-                <div class="block-div"><a href="home-RecordDaily.php">每日记录</a></div>
-                <div class="block-div">历史查询</div>
-                <div class="block-div">评分分析</div>
-                <div class="block-div"><a href="home-AddRecord.php">评分入口</a></div>
+                <div id="type-tourist" class="block-div">游客</div>
+                <div id="type-scorer" class="block-div">纪检员</div>
+            </div>
+            <div id="main-nav" class="main-nav">
             </div>
         </div>
     </body>
