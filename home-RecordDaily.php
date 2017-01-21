@@ -38,7 +38,7 @@
                 echo "</th>";
                 for ($j = 0; $j < count($subject); $j++) {
                     echo "<th>";
-                    $result = mysqli_query($connection, 'SELECT * FROM serial where subject_id = '.$sub_id[$j].' and class_id = '.$cla_id[$i]);
+                    $result = mysqli_query($connection, 'SELECT * FROM serial where date = "'.date('y-m-d',time()).'" and subject_id = '.$sub_id[$j].' and class_id = '.$cla_id[$i]);
                     if($result) {
                         $row = mysqli_fetch_array($result);
                         echo $row['score'];
