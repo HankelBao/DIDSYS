@@ -10,8 +10,13 @@
     <body>
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <div class="nav-div">
-            <img src="SFLS.jpg" width="60px" height="60px"/>
-            <a class="link-div">SFLS DI Department</a>
+            <img src="SFLS.jpg" width="70px" height="70px"/>
+            <a class="link-div active">SFLS DI Department</a>
+            <a class="link-div">ScoreBoard</a>
+            <a class="link-div">History</a>
+            <a class="link-div">Scorer</a>
         </div>
+        <div class="intro-page">
+            <div class="title-div">Welcome to SFLS 
     </body>
 </html>
