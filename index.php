@@ -10,8 +10,8 @@
     <body>
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <div class="nav-div">
-            <img src="SFLS.jpg" width="80px" height="80px"/>
-            <div class="link-div">SFLS 
+            <img src="SFLS.jpg" width="60px" height="60px"/>
+            <a class="link-div">SFLS DI Department</a>
         </div>
     </body>
 </html>
