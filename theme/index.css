@@ -3,10 +3,14 @@ body {
 }
 
 .nav-div {
-    padding-top: 50px;
+    padding-top: 40px;
     padding-left: 10%;
     padding-right: 10%;
     width: 80%;
 }
 
-.sfls-pic {}
+.link-div {
+    font-size: 30px;
+    margin-left: 10px;
+    border-bottom: solid 1px #D32F2F;
+}

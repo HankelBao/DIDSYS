@@ -10,7 +10,8 @@
     <body>
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <div class="nav-div">
-            aaaaaa
+            <img src="SFLS.jpg" width="80px" height="80px"/>
+            <div class="link-div">SFLS 
         </div>
     </body>
 </html>
