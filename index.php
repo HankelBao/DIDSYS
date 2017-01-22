@@ -17,6 +17,6 @@
             <a class="link-div">Scorer</a>
         </div>
         <div class="intro-page">
-            <div class="title-div">Welcome to SFLS 
+            <div class="title-div">Welcome to SFLS aa
     </body>
 </html>
