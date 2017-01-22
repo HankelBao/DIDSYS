@@ -9,11 +9,11 @@
 
     <body>
         <script type="text/javascript" src="js/jquery.min.js"></script>
-        <div class="top-nav">
+        <!--<div class="top-nav">
             <label class="title-label">SFLS Discipline Inspection Department</label>
             <label class="title-chi">苏州外国语学校纪检部评分官网</label>
             <label class="signature-label">Powered by HankelBao</label>
-        </div>
+        </div>-->
     
         <div class="intro-page">
             

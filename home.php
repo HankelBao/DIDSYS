@@ -27,8 +27,10 @@
         </div>
         <div class="bottom-nav">
             <div class="side-nav">
-                <div id="type-tourist" class="block-div">游客</div>
-                <div id="type-scorer" class="block-div">纪检员</div>
+                <div id="type-tourist" class="block-div">计分表</div>
+                <div id="type-scorer" class="block-div">流水记录</div>
+                <div id="type-scorer" class="block-div">历史查询</div>
+                <div id="type-scorer" class="block-div">计分入口</div>
             </div>
             <div id="main-nav" class="main-nav">
             </div>
