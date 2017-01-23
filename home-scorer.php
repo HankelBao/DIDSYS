@@ -16,5 +16,10 @@
             <a href="home-history.php" class="link-div">History</a>
             <a href="home-scorer.php" class="link-div active">Scorer</a>
         </div>
+                    <form action="database/signin.php" method="POST">
+                        <input placeholder="&nbsp;username" class="input-text" name="username" type="text"></br>
+                        <input placeholder="&nbsp;password" class="input-text" name="password" type="password"></br>
+                        <button class="submit-button" type="submit">Sign In</button>
+                    </form>
     </body>
 </html>
