@@ -10,6 +10,11 @@
 
     <body>
         <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $("tr:odd").css("background","rgb(256,186,186)");
+            })
+        </script>
         <div class="nav-div">
             <img src="SFLS.jpg" width="70px" height="70px"/>
             <a href="index.php" class="link-div">SFLS DI Department</a>
