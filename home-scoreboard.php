@@ -18,7 +18,7 @@
             <a href="home-scorer.php" class="link-div">Scorer</a>
         </div>
         <div class="scoreboard-div">
-            <div class="title-div">以下是 的数据（为保证数据已被审核，当日数据会在下午5:30后刷新</div>
+            <div class="title-div">以下是 的数据（为保证数据已被审核，当日数据会在下午5:30后刷新）</div>
         <?php
             require('database/databaseConnect.php');
             require('database/serialSearch.php');
