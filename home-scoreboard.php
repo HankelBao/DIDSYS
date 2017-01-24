@@ -27,16 +27,16 @@
             <div class="subscript-div">为保证数据已被审核，当日数据会在下午5:30后刷新</div>
         <?php
             require('database/databaseConnect.php');
-            require('database/serialSearch.php');
-            $result = mysqli_query($connection, 'SELECT * FROM subject');
-            if ($result == False) {
+            require('database/recordSearch.php');
+            $dbRowCollect = mysqli_query($connection, 'SELECT * FROM subject');
+            if ($dbRowCollect == False) {
                 echo('null database');
             }
             $subject = array();
             $sub_id = array();
-            while ($row = mysqli_fetch_array($result)) {
-                $subject[] = $row['subject_name'];
-                $sub_id[] = $row['subject_id'];
+            while ($dbRow = mysqli_fetch_array($dbRowCollect)) {
+                $subject[] = $dbRow['subject_name'];
+                $sub_id[] = $dbRow['subject_id'];
             }
             echo "<table border='1'><tr>";
             echo "<th> </th>";
@@ -45,15 +45,15 @@
             }
             echo "</tr>";
             
-            $result = mysqli_query($connection, 'SELECT * FROM class');
-            if ($result == False) {
+            $dbRowCollect = mysqli_query($connection, 'SELECT * FROM class');
+            if ($dbRowCollect == False) {
                 die('null database');
             }
             $class = array();
             $cla_id = array();
-            while ($row = mysqli_fetch_array($result)) {
-                $class[] = $row['class_name'];
-                $cla_id[] = $row['class_id'];
+            while ($dbRow = mysqli_fetch_array($dbRowCollect)) {
+                $class[] = $dbRow['class_name'];
+                $cla_id[] = $dbRow['class_id'];
             }
             for($i=0; $i<count($class); $i++) {
                 echo "<tr>";
@@ -62,9 +62,9 @@
                 echo "</th>";
                 for ($j = 0; $j < count($subject); $j++) {
                     echo "<th>";
-                    $row = serialSearch($connection, date('y-m-d',time()), $sub_id[$j], $cla_id[$i]);
-                    if ($row != "null")
-                        echo $row['score'];
+                    $dbRow = recordSearch($connection, date('y-m-d',time()), $sub_id[$j], $cla_id[$i]);
+                    if ($dbRow != "null")
+                        echo $dbRow['score'];
                     echo "</th>";
                 }
                 echo "</tr>";
