@@ -20,8 +20,9 @@
             <a href="home-scorer.php" class="link-div active">Scorer</a>
         </div>
         <div class="login-div">
-            <div class="title-div">You are a scorer? Sign in to score!</div>
-            <div class="subtitle-div">Teachers will also get an account, but you cannot score here...</div>
+            <div class="title-div">Welcome! <?php echo $_SESSION['scorer_name']; ?> </div>
+            <div class="subtitle-div">It's <?php echo date('y年m月d日',time())?> today. Your score will be updated to scoreboard at 5:30</div>
+            <div class="warntitle-div">You must score justful and careful!!</div>
         </div>
     </body>
 </html>

@@ -36,3 +36,10 @@
     font-size: 20px;
     color: rgb(163, 171, 179);
 }
+
+.warntitle-div {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #D32F2F;
+}
