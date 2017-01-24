@@ -64,7 +64,7 @@
                     echo "<th>";
                     $dbRow = recordSearch($connection, date('y-m-d',time()), $sub_id[$j], $cla_id[$i]);
                     if ($dbRow != "null")
-                        echo $dbRow['score'];
+                        echo $dbRow['rcrd_score'];
                     echo "</th>";
                 }
                 echo "</tr>";
