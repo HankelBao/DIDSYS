@@ -17,10 +17,10 @@ require 'databaseConnect.php';
      $_SESSION['scorer_id'] = $row['scorer_id'];
      $_SESSION['scorer_name'] = $row['scorer_name'];
 
-     header("location:../home.php");
+     header("location:../home-scorer.php");
      exit;
    }
 }
-
+header("location:../home-scorer-login.php");
 require 'databaseClose.php';
 ?>
