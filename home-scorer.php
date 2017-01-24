@@ -11,6 +11,7 @@
     </head>
 
     <body>
+    
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <div class="nav-div">
             <img src="SFLS.jpg" width="70px" height="70px"/>
