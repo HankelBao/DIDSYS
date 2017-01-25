@@ -1,32 +1,8 @@
        <?php
             require('database/databaseConnect.php');
-            $result = mysqli_query($connection, 'SELECT * FROM subject');
-            if ($result == False) {
-                echo('null database');
-            }
-            $subject = array();
-            $sub_id = array();
-            while ($row = mysqli_fetch_array($result)) {
-                $subject[] = $row['subject_name'];
-                $sub_id[] = $row['subject_id'];
-            }
-            echo "<table border='1'><tr>";
-            echo "<th> </th>";
-            for($i=0; $i<count($subject); $i++) {
-                echo "<th>".$subject[$i]."</th>";
-            }
-            echo "</tr>";
-            
-            $result = mysqli_query($connection, 'SELECT * FROM class');
-            if ($result == False) {
-                die('null database');
-            }
-            $class = array();
-            $cla_id = array();
-            while ($row = mysqli_fetch_array($result)) {
-                $class[] = $row['class_name'];
-                $cla_id[] = $row['class_id'];
-            }
+            require('database/subTableHead.php');
+            require('database/claLoad.php');
+
             session_start();
             echo "<form action='database/scoreSubmit.php' method='POST'>";
             echo "<input name='score_date' value='".date('y-m-d',time())."' style='display:none'\>";
@@ -46,9 +22,9 @@
                 }
                 echo "</tr>";
             }
-            echo "</table>";
+
+            require('database/subTableEnd.php');
             echo "<button type='submit'>Submit</button>";
-            
             echo "</form>";
             
             require('database/databaseClose.php');

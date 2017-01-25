@@ -28,23 +28,8 @@
         <?php
             require('database/databaseConnect.php');
             require('database/recordSearch.php');
-            $dbRowCollect = mysqli_query($connection, 'SELECT * FROM subject');
-            if ($dbRowCollect == False) {
-                echo('null database');
-            }
-            $subject = array();
-            $sub_id = array();
-            while ($dbRow = mysqli_fetch_array($dbRowCollect)) {
-                $subject[] = $dbRow['subject_name'];
-                $sub_id[] = $dbRow['subject_id'];
-            }
-            echo "<table border='1'><tr>";
-            echo "<th> </th>";
-            for($i=0; $i<count($subject); $i++) {
-                echo "<th>".$subject[$i]."</th>";
-            }
-            echo "</tr>";
-            
+            require('database/subTableHead.php');
+    
             $dbRowCollect = mysqli_query($connection, 'SELECT * FROM class');
             if ($dbRowCollect == False) {
                 die('null database');
@@ -69,8 +54,7 @@
                 }
                 echo "</tr>";
             }
-            echo "</table>";
-            
+            require('database/subTableEnd.php');
             require('database/databaseClose.php');
         ?>
         </div>

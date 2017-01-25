@@ -1,5 +1,10 @@
 <?php
 /*
+ *code requrie file
+ *I: nothing
+ *O: a link named $connection to database 
+ */
+/*
  *connect to the database
  */
 $connection = mysqli_connect("localhost", "root", "201028");
