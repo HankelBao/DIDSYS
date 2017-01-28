@@ -1,5 +1,5 @@
 <?php
-
+require('session.php');
 $username = $_POST["username"];
 $password = $_POST["password"];
 
@@ -11,12 +11,8 @@ require 'databaseConnect.php';
  }
  while ($row = mysqli_fetch_array($result)) {
    if ($row['scrrPassword'] == $password) {
-     session_start();
-
-     $_SESSION['log'] = true;
-     $_SESSION['scorer_id'] = $row['scrrId'];
-     $_SESSION['scorer_name'] = $row['scrrName'];
-
+     session::register($row['scrrId'], $row['scrrName']);
+     
      header("location:../home-scorer.php");
      exit;
    }
