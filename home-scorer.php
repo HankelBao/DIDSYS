@@ -29,7 +29,8 @@
         
         <div class="pos-center-div">
        <?php
-            require('database/databaseConnect.php');
+            require('database/dbManager.php');
+            $connection = dbManager::createConnection();
             require('database/subTableHead.php');
             require('database/claLoad.php');
 
@@ -56,7 +57,7 @@
             echo "<button type='submit'>Submit</button>";
             echo "</form>";
             
-            require('database/databaseClose.php');
+            dbManager::closeConnection($connection);
         ?>
         </div>
     </body>

@@ -3,7 +3,8 @@ require('session.php');
 $username = $_POST["username"];
 $password = $_POST["password"];
 
-require 'databaseConnect.php';
+require('dbManager.php');
+$connection = dbManager::createConnection();
 
  $result = mysqli_query($connection, 'SELECT * FROM scorer WHERE scrrName="'.$username.'"');
  if ($result == False) {
@@ -12,11 +13,11 @@ require 'databaseConnect.php';
  while ($row = mysqli_fetch_array($result)) {
    if ($row['scrrPassword'] == $password) {
      session::register($row['scrrId'], $row['scrrName']);
-     
+
      header("location:../home-scorer.php");
      exit;
    }
 }
 header("location:../home-scorer-login.php");
-require 'databaseClose.php';
+dbManager::closeConnection();
 ?>
