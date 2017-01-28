@@ -1,7 +1,7 @@
        <?php
-            require('database/databaseConnect.php');
-            require('database/subTableHead.php');
-            require('database/claLoad.php');
+            require_once('database/databaseConnect.php');
+            require_once('database/subTableHead.php');
+            require_once('database/claLoad.php');
 
             session_start();
             echo "<form action='database/scoreSubmit.php' method='POST'>";
@@ -23,9 +23,9 @@
                 echo "</tr>";
             }
 
-            require('database/subTableEnd.php');
+            require_once('database/subTableEnd.php');
             echo "<button type='submit'>Submit</button>";
             echo "</form>";
             
-            require('database/databaseClose.php');
+            require_once('database/databaseClose.php');
         ?>

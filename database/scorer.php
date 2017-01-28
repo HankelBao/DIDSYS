@@ -16,6 +16,12 @@ class scorer {
         }
     }
 
+    public static function checkSession() {
+        if (session::check() == FALSE) {
+	        self::turnToLogin();
+        }
+    }
+
     public static function selectAccount($username) {
         $connection = dbManager::createConnection();
 
@@ -34,10 +40,12 @@ class scorer {
 
     private static function turnToLogin() {
         header("location:../home-scorer-login.php");
+        exit;
     }
 
     private static function turnToEntry() {
         header("location:../home-scorer.php");    
+        exit;
     }
 }
 ?>

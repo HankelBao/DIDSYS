@@ -1,4 +1,7 @@
-<?php require('database/checkSession.php'); ?>
+<?php 
+    require_once('database/scorer.php'); 
+    scorer::checkSession();
+?>
 
 <html>
     <head>
@@ -29,10 +32,10 @@
         
         <div class="pos-center-div">
        <?php
-            require('database/dbManager.php');
+            require_once('database/dbManager.php');
             $connection = dbManager::createConnection();
-            require('database/subTableHead.php');
-            require('database/claLoad.php');
+            require_once('database/subTableHead.php');
+            require_once('database/claLoad.php');
 
             echo "<form action='database/scoreSubmit.php' method='POST'>";
             echo "<input name='score_date' value='".date('y-m-d',time())."' style='display:none'\>";
@@ -53,7 +56,7 @@
                 echo "</tr>";
             }
 
-            require('database/subTableEnd.php');
+            require_once('database/subTableEnd.php');
             echo "<button type='submit'>Submit</button>";
             echo "</form>";
             

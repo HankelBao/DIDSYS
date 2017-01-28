@@ -16,5 +16,6 @@ class record {
         } 
         dbManager::closeConnection($dbConnection);
     }
+    //public static function add
 }
 ?>

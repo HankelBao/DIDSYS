@@ -1,5 +1,5 @@
 <?php
-require('scorer.php');
+require_once('scorer.php');
 
 $username = $_POST["username"];
 $password = $_POST["password"];
