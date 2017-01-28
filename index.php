@@ -20,7 +20,10 @@
         <div class="intro-page">
             <div class="title-div">Welcome to SFLS Discipline Inspection Department</div>
             <div class="subtitle-div">A just, powerful department scoring reasonable marks</div>
-            <embed width="100%" height="100%" src="file:///C:/Users/hanke/Desktop/纪检部扣分细则.pdf" type="application/pdf" style="margin:0px;padding:0px;overflow:hidden;display:block;">
+            <input style="margin-top:100px" class="input-text" placeholder="your suggestions"/>
+            <button class="submit-button" type="submit">Submit</button>
+            <div class="suggestion-div">Your suggestions will be viewed and considered carefully. Thanks for suggesting.</div>
+            <embed width="100%" height="100%" src="rule-ref.pdf" type="application/pdf" style="margin:0px;padding:0px;overflow:hidden;display:block;">
         </div>
     </body>
 </html>

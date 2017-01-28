@@ -10,11 +10,13 @@
 
     <body>
         <script type="text/javascript" src="js/jquery.min.js"></script>
+
         <script type="text/javascript">
             $(function(){
                 $("tr:odd").css("background","rgb(256,186,186)");
             })
         </script>
+
         <div class="nav-div">
             <img src="SFLS.jpg" width="70px" height="70px"/>
             <a href="index.php" class="link-div">SFLS DI Department</a>
@@ -22,8 +24,9 @@
             <a href="home-history.php" class="link-div">History</a>
             <a href="home-scorer.php" class="link-div">Scorer</a>
         </div>
+
         <div class="scoreboard-div">
-            <div class="script-div">以下是<?php echo date('y-m-d',time())?>的计分表:</div>
+            <div class="script-div">以下是<?php echo date('y年m月d日',time())?>的计分表:</div>
             <div class="subscript-div">为保证数据已被审核，当日数据会在下午5:30后刷新</div>
         <?php
             require('database/databaseConnect.php');
@@ -37,8 +40,8 @@
             $class = array();
             $cla_id = array();
             while ($dbRow = mysqli_fetch_array($dbRowCollect)) {
-                $class[] = $dbRow['class_name'];
-                $cla_id[] = $dbRow['class_id'];
+                $class[] = $dbRow['clsName'];
+                $cla_id[] = $dbRow['clsId'];
             }
             for($i=0; $i<count($class); $i++) {
                 echo "<tr>";
@@ -49,7 +52,7 @@
                     echo "<th>";
                     $dbRow = recordSearch($connection, date('y-m-d',time()), $sub_id[$j], $cla_id[$i]);
                     if ($dbRow != "null")
-                        echo $dbRow['rcrd_score'];
+                        echo $dbRow['rcrdScore'];
                     echo "</th>";
                 }
                 echo "</tr>";

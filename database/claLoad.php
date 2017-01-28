@@ -11,6 +11,6 @@
             $class = array();
             $cla_id = array();
             while ($row = mysqli_fetch_array($result)) {
-                $class[] = $row['class_name'];
-                $cla_id[] = $row['class_id'];
+                $class[] = $row['clsName'];
+                $cla_id[] = $row['clsId'];
             }

@@ -45,3 +45,24 @@ body {
     width: 80%;
     margin-right: 10%;
 }
+
+.input-text {
+    border-left: solid 3.5px #D32F2F;
+    border-top,
+    border-bottom,
+    border-right: solid 1.5px #424242;
+    height: 45px;
+    width: 300px;
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.submit-button {
+    background-color: #D32F2F;
+    color: #fafafa;
+    width: 300px;
+    height: 45px;
+    font-size: 20px;
+    margin-top: 25px;
+    border: 0px;
+}

@@ -11,8 +11,8 @@
     </head>
 
     <body>
-    
         <script type="text/javascript" src="js/jquery.min.js"></script>
+
         <div class="nav-div">
             <img src="SFLS.jpg" width="70px" height="70px"/>
             <a href="index.php" class="link-div">SFLS DI Department</a>
@@ -20,18 +20,19 @@
             <a href="home-history.php" class="link-div">History</a>
             <a href="home-scorer.php" class="link-div active">Scorer</a>
         </div>
+        
         <div class="pos-center-div">
             <div class="title-div">Welcome! <?php echo $_SESSION['scorer_name']; ?> </div>
             <div class="subtitle-div">It's <?php echo date('y年m月d日',time())?> today. Your score will be updated to scoreboard at 5:30</div>
             <div class="warntitle-div">You must score justful and careful!!</div>
         </div>
+        
         <div class="pos-center-div">
        <?php
             require('database/databaseConnect.php');
             require('database/subTableHead.php');
             require('database/claLoad.php');
 
-            //session_start();
             echo "<form action='database/scoreSubmit.php' method='POST'>";
             echo "<input name='score_date' value='".date('y-m-d',time())."' style='display:none'\>";
             echo "<input name='score_time' value='".date('y-m-d h:i:s',time())."' style='display:none'\>";

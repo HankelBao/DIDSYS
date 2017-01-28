@@ -15,8 +15,8 @@
             $subject = array();
             $sub_id = array();
             while ($dbRow = mysqli_fetch_array($dbRowCollect)) {
-                $subject[] = $dbRow['subject_name'];
-                $sub_id[] = $dbRow['subject_id'];
+                $subject[] = $dbRow['subName'];
+                $sub_id[] = $dbRow['subId'];
             }
             echo "<table border='1'><tr>";
             echo "<th> </th>";

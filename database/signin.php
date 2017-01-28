@@ -5,17 +5,17 @@ $password = $_POST["password"];
 
 require 'databaseConnect.php';
 
- $result = mysqli_query($connection, 'SELECT * FROM scorer WHERE scorer_name="'.$username.'"');
+ $result = mysqli_query($connection, 'SELECT * FROM scorer WHERE scrrName="'.$username.'"');
  if ($result == False) {
    die("Please Sign Up First");
  }
  while ($row = mysqli_fetch_array($result)) {
-   if ($row['scorer_pw'] == $password) {
+   if ($row['scrrPassword'] == $password) {
      session_start();
 
      $_SESSION['log'] = true;
-     $_SESSION['scorer_id'] = $row['scorer_id'];
-     $_SESSION['scorer_name'] = $row['scorer_name'];
+     $_SESSION['scorer_id'] = $row['scrrId'];
+     $_SESSION['scorer_name'] = $row['scrrName'];
 
      header("location:../home-scorer.php");
      exit;
