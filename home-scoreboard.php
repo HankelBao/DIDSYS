@@ -31,7 +31,7 @@
         <?php
             require('database/dbManager.php');
             $connection = dbManager::createConnection();
-       
+            require('database/record.php');
             require('database/recordSearch.php');
             require('database/subTableHead.php');
 
@@ -52,7 +52,7 @@
                 echo "</th>";
                 for ($j = 0; $j < count($subject); $j++) {
                     echo "<th>";
-                    $dbRow = recordSearch($connection, date('y-m-d',time()), $sub_id[$j], $cla_id[$i]);
+                    $dbRow = record::search(date('y-m-d',time()), $sub_id[$j], $cla_id[$i]);
                     if ($dbRow != "null")
                         echo $dbRow['rcrdScore'];
                     echo "</th>";

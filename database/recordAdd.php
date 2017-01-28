@@ -1,5 +1,5 @@
 <?php
-    require('recordSearch.php');
+    require_once('recordSearch.php');
     function recordAdd($dbConnection, $addDate, $addSub_id, $addCla_id, $addScorer_id, $addScore, $addTime) {
         $dbRow = recordSearch($dbConnection, $addDate, $addSub_id, $addCla_id);
         if ($dbRow == NULL) {

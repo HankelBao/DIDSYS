@@ -9,7 +9,7 @@ if(!isset($_SESSION['log'])){
 	header("location:home-scorer-login.php");
 	exit;
 }*/
-require('session.php');
+require_once('session.php');
 if (session::check() == FALSE) {
 	header("location:home-scorer-login.php");
 	exit;
