@@ -28,6 +28,6 @@ class record {
             mysqli_query($dbConnection, $tmpSQL);
         }
         dbManager::closeConnection($dbConnection);
-    }   
+    }
 }
 ?>

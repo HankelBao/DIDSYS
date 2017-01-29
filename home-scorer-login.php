@@ -20,7 +20,7 @@
         <div class="login-div">
             <div class="title-div">You are a scorer? Sign in to score!</div>
             <div class="subtitle-div">Teachers will also get an account, but you cannot score here...</div>
-            <form action="database/signin.php" method="POST">
+            <form action="handler/signin.php" method="POST">
                 <input placeholder="&nbsp;username" class="input-text" name="username" type="text"></br>
                 <input placeholder="&nbsp;password" class="input-text" name="password" type="password"></br>
                 <button class="submit-button" type="submit">Sign In</button>

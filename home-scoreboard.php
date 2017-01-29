@@ -29,10 +29,10 @@
             <div class="script-div">以下是<?php echo date('y年m月d日',time())?>的计分表:</div>
             <div class="subscript-div">为保证数据已被审核，当日数据会在下午5:30后刷新</div>
         <?php
-            require_once('database/dbManager.php');
+            require_once('inc/dbManager.php');
             $connection = dbManager::createConnection();
-            require_once('database/record.php');
-            require_once('database/subTableHead.php');
+            require_once('inc/record.php');
+            require_once('handler/subTableHead.php');
 
             $dbRowCollect = mysqli_query($connection, 'SELECT * FROM class');
             if ($dbRowCollect == False) {
@@ -58,7 +58,7 @@
                 }
                 echo "</tr>";
             }
-            require_once('database/subTableEnd.php');
+            require_once('handler/subTableEnd.php');
 
             dbManager::closeConnection($connection);
         ?>

@@ -1,5 +1,5 @@
 <?php 
-    require_once('database/scorer.php'); 
+    require_once('inc/scorer.php'); 
     scorer::checkSession();
 ?>
 
@@ -32,12 +32,12 @@
         
         <div class="pos-center-div">
        <?php
-            require_once('database/dbManager.php');
+            require_once('inc/dbManager.php');
             $connection = dbManager::createConnection();
-            require_once('database/subTableHead.php');
-            require_once('database/claLoad.php');
+            require_once('handler/subTableHead.php');
+            require_once('handler/claLoad.php');
 
-            echo "<form action='database/scoreSubmit.php' method='POST'>";
+            echo "<form action='handler/scoreSubmit.php' method='POST'>";
             echo "<input name='score_date' value='".date('y-m-d',time())."' style='display:none'\>";
             echo "<input name='score_time' value='".date('y-m-d h:i:s',time())."' style='display:none'\>";
             echo "<input name='scorer' value='".$_SESSION['scorer_id']."' style='display:none'\>";
@@ -56,7 +56,7 @@
                 echo "</tr>";
             }
 
-            require_once('database/subTableEnd.php');
+            require_once('handler/subTableEnd.php');
             echo "<button type='submit'>Submit</button>";
             echo "</form>";
             
