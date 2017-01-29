@@ -11,5 +11,22 @@ class dbManager {
     public static function closeConnection($connection) {
         mysqli_close($connection); 
     }
+    public static function getArray($tableName, $fieldName) {
+        $connection = self::createConnection();
+
+        $tmp_sql = "SELECT * FROM ".$tableName;
+        $result = mysqli_query($connection, $tmp_sql);
+        if ($result == False) {
+           die('null database');
+        }
+
+        $return_array = array();
+        while ($row = mysqli_fetch_array($result)) {
+            $return_array[] = $row[$fieldName];
+        }
+
+        self::closeConnection($connection);
+        return $return_array;
+    }
 }
 ?>

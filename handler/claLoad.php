@@ -4,7 +4,7 @@
  *I: $connection
  *O: $class[], $cla_id
  */
-            $result = mysqli_query($connection, 'SELECT * FROM class');
+            /*$result = mysqli_query($connection, 'SELECT * FROM class');
             if ($result == False) {
                 die('null database');
             }
@@ -13,6 +13,10 @@
             while ($row = mysqli_fetch_array($result)) {
                 $class[] = $row['clsName'];
                 $cla_id[] = $row['clsId'];
-            }
-
+            }*/
+            require_once('inc/dbManager.php');
+            $class = array();
+            $cla_id = array();
+            $class = dbManager::getArray("class", "clsName");
+            $cla_id = dbManager::getArray("class", "clsId");
 ?>
