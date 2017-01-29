@@ -32,7 +32,6 @@
             require_once('database/dbManager.php');
             $connection = dbManager::createConnection();
             require_once('database/record.php');
-            require_once('database/recordSearch.php');
             require_once('database/subTableHead.php');
 
             $dbRowCollect = mysqli_query($connection, 'SELECT * FROM class');

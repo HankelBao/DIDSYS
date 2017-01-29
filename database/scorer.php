@@ -16,6 +16,12 @@ class scorer {
         }
     }
 
+    public static function signUp($username, $password) {
+        $connection = dbManager::createConnection();
+        mysqli_query($connection, "INSERT INTO scorer(scrrName, scrrPassword) VALUES ('".$username."','".$password."')");
+        dbManager::closeConnection($connection);
+    }
+
     public static function checkSession() {
         if (session::check() == FALSE) {
 	        self::turnToLogin();

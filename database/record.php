@@ -16,6 +16,18 @@ class record {
         } 
         dbManager::closeConnection($dbConnection);
     }
-    //public static function add
+    public static function add($addDate, $addSub_id, $addCla_id, $addScorer_id, $addScore, $addTime) {
+        $dbConnection = dbManager::createConnection();
+        $dbRow = self::search($addDate, $addSub_id, $addCla_id);
+        if ($dbRow == NULL) {
+            $tmpSQL = "INSERT INTO record 
+                    (rcrdId, rcrdDate, rcrd_classId, rcrd_subjectId, rcrd_scorerId, rcrdScore, rcrdScoreTime, rcrdDescription) 
+                VALUES 
+                    (NULL, '".$addDate."','".$addCla_id."','".$addSub_id."','".$addScorer_id."','".$addScore."','".$addTime."','');";
+            echo $tmpSQL."</br>";
+            mysqli_query($dbConnection, $tmpSQL);
+        }
+        dbManager::closeConnection($dbConnection);
+    }   
 }
 ?>
