@@ -14,9 +14,9 @@
                 $class[] = $row['clsName'];
                 $cla_id[] = $row['clsId'];
             }*/
-            require_once('inc/dbManager.php');
+            require_once('inc/clas.php');
             $class = array();
             $cla_id = array();
-            $class = dbManager::getArray("class", "clsName");
-            $cla_id = dbManager::getArray("class", "clsId");
+            $class = clas::getNameArray();
+            $cla_id = clas::getIdArray();
 ?>

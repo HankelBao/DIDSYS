@@ -5,17 +5,20 @@ class session {
             session_start();
         }
     }
+
     public static function register($scorerId, $scorerName) {
         self::active();
         $_SESSION['log'] = true;
         $_SESSION['scorer_id'] = $scorerId;
         $_SESSION['scorer_name'] = $scorerName;
     }
+
     public static function destory() {
         self::active();
         unset($_SESSION);
         session_destroy();
     }
+
     public static function check() {
         self::active();
         if(!isset($_SESSION['log'])) {
@@ -24,14 +27,16 @@ class session {
             return TRUE;
         }
     }
-    public static function scorerId() {
+
+    public static function getScorerId() {
         if ($this->check() == TRUE) {
             return $_SESSION['scorer_id'];
         } else {
             return 0;
         }
     }
-    public static function scorerName() {
+
+    public static function getScorerName() {
         if ($this->check() == TRUE) {
             return $_SESSION['scorer_id'];
         } else {

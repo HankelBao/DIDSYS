@@ -8,9 +8,11 @@ class dbManager {
         $database = mysqli_select_db($connection,'did');
         return $connection;
     }
+
     public static function closeConnection($connection) {
         mysqli_close($connection); 
     }
+    
     public static function getArray($tableName, $fieldName) {
         $connection = self::createConnection();
 

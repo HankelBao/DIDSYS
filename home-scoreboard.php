@@ -29,38 +29,25 @@
             <div class="script-div">以下是<?php echo date('y年m月d日',time())?>的计分表:</div>
             <div class="subscript-div">为保证数据已被审核，当日数据会在下午5:30后刷新</div>
         <?php
-            require_once('inc/dbManager.php');
-            $connection = dbManager::createConnection();
             require_once('inc/record.php');
-            require_once('handler/subTableHead.php');
+            require_once('inc/subject.php');
+            require_once('inc/clas.php');
+            require_once('inc/table.php');
 
-            $dbRowCollect = mysqli_query($connection, 'SELECT * FROM class');
-            if ($dbRowCollect == False) {
-                die('null database');
-            }
-            $class = array();
-            $cla_id = array();
-            while ($dbRow = mysqli_fetch_array($dbRowCollect)) {
-                $class[] = $dbRow['clsName'];
-                $cla_id[] = $dbRow['clsId'];
-            }
-            for($i=0; $i<count($class); $i++) {
-                echo "<tr>";
-                echo "<th>";
-                echo $class[$i];
-                echo "</th>";
-                for ($j = 0; $j < count($subject); $j++) {
-                    echo "<th>";
-                    $dbRow = record::search(date('y-m-d',time()), $sub_id[$j], $cla_id[$i]);
-                    if ($dbRow != "null")
-                        echo $dbRow['rcrdScore'];
-                    echo "</th>";
+            $subjectName = subject::getNameArray();
+            $subjectId = subject::getIdArray();
+            $className = clas::getNameArray();
+            $classId = clas::getIdArray();
+
+            table::echoHead($subjectName);
+            for ($i = 0; $i < count($classId); $i++) {
+                unset($score);
+                for ($j = 0; $j < count($subjectId); $j++) { 
+                    $score[] = record::getScore(date('y-m-d',time()), $subjectId[$j], $classId[$i]);
                 }
-                echo "</tr>";
+                table::echoRow($className[$i], $score);
             }
-            require_once('handler/subTableEnd.php');
-
-            dbManager::closeConnection($connection);
+            table::echoEnd();
         ?>
         </div>
     </body>

@@ -3,7 +3,8 @@ require_once('dbManager.php');
 class record {
     public static function search($srchDate, $srchSub_id, $srchCla_id) {
         $dbConnection = dbManager::createConnection();
-        $tmpSQL = 'SELECT * FROM record WHERE rcrdDate = "'.$srchDate.'" and rcrd_subjectId = '.$srchSub_id.' and rcrd_classId = '.$srchCla_id;
+        $tmpSQL = 'SELECT * FROM record WHERE 
+                rcrdDate = "'.$srchDate.'" and rcrd_subjectId = '.$srchSub_id.' and rcrd_classId = '.$srchCla_id;
         $dbRowCollect = mysqli_query($dbConnection, $tmpSQL);
         if($dbRowCollect) {
             $dbRow = mysqli_fetch_array($dbRowCollect);
@@ -16,6 +17,12 @@ class record {
         } 
         dbManager::closeConnection($dbConnection);
     }
+
+    public static function getScore($srchDate, $srchSub_id, $srchCla_id) {
+        $dbRow = self::search($srchDate, $srchSub_id, $srchCla_id);
+        return $dbRow['rcrdScore'];
+    }
+    
     public static function add($addDate, $addSub_id, $addCla_id, $addScorer_id, $addScore, $addTime) {
         $dbConnection = dbManager::createConnection();
         $dbRow = self::search($addDate, $addSub_id, $addCla_id);
