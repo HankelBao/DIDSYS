@@ -46,5 +46,15 @@ class scorer {
         return FALSE;
         dbManager::closeConnection();      
     }
+
+    public static function getNameById($id) {
+        $connection = dbManager::createConnection();
+        $result = mysqli_query($connection, 'SELECT * FROM scorer WHERE scrrId="'.$id.'"');
+        dbManager::checkResult($result);
+        dbManager::closeConnection($connection);         
+
+        $row = mysqli_fetch_array($result);
+        return $row['scrrName'];
+    }
 }
 ?>

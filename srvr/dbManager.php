@@ -13,6 +13,12 @@ class dbManager {
         mysqli_close($connection); 
     }
     
+    public static function checkResult($result) {
+        if ($result == False) {
+           die('null database');
+        }
+    }
+
     public static function getArray($tableName, $fieldName) {
         $connection = self::createConnection();
 

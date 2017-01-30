@@ -17,5 +17,22 @@
             <a href="home-history.php" class="link-div active">History</a>
             <a href="home-scorer.php" class="link-div">Scorer</a>
         </div>
+        <div class="pos-center-div">
+        <?php
+            require('srvr/dbManager.php');
+            require('srvr/dbScorer.php');
+            require('srvr/dbClas.php');
+            require('srvr/dbSubject.php');
+            $connection = dbManager::createConnection();
+            $tmpSQL = "select * from record where rcrdScoreTime > '2017-1-26'";
+            $result = mysqli_query($connection, $tmpSQL);
+            dbManager::checkResult($result);
+
+            while ($row = mysqli_fetch_array($result)) {
+                echo "评分员".scorer::getNameById($row['rcrd_ScorerId'])."在".$row["rcrdScoreTime"]."给".clas::getNameById($row["rcrd_ClassId"])."对于".subject::getNameById($row["rcrd_SubjectId"])."评分".$row["rcrdScore"];
+                echo "</br>";
+            }
+            ?>
+        </div>
     </body>
 </html>

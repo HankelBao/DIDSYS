@@ -11,5 +11,14 @@ class subject {
         $sub_name = dbManager::getArray("subject","subName");
         return $sub_name;
     }
+    public static function getNameById($id) {
+        $connection = dbManager::createConnection();
+        $result = mysqli_query($connection, 'SELECT * FROM subject WHERE subId="'.$id.'"');
+        dbManager::checkResult($result);
+        dbManager::closeConnection($connection);         
+
+        $row = mysqli_fetch_array($result);
+        return $row['subName'];
+    }
 }
 ?>
