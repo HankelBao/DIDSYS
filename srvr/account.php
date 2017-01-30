@@ -1,6 +1,6 @@
 <?php
 require_once('session.php');
-require_once('scorer.php');
+require_once('dbScorer.php');
 
 class account {
     public static function SignIn($username,$password) {

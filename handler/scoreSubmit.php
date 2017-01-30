@@ -1,5 +1,5 @@
 <?php
-require_once('../srvr/record.php');
+require_once('../srvr/dbRecord.php');
 require_once('../srvr/dbManager.php');
     $score_date = $_POST['score_date'];
     $score_time = $_POST['score_time'];

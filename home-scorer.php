@@ -33,10 +33,10 @@
         <div class="pos-center-div">
        <?php
             require_once('srvr/dbManager.php');
-            require_once('srvr/subject.php');
+            require_once('srvr/dbSubject.php');
+            require_once('srvr/dbClas.php');
             require_once('srvr/table.php');
             require_once('srvr/form.php');
-            require_once('srvr/clas.php');
 
             $subjectName = subject::getNameArray();
             $subjectId = subject::getIdArray();
