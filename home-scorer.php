@@ -1,6 +1,6 @@
 <?php 
-    require_once('inc/scorer.php'); 
-    scorer::checkSession();
+    require_once('srvr/account.php'); 
+    account::checkSession();
 ?>
 
 <html>
@@ -32,35 +32,39 @@
         
         <div class="pos-center-div">
        <?php
-            require_once('inc/dbManager.php');
-            $connection = dbManager::createConnection();
-            require_once('handler/subTableHead.php');
-            require_once('handler/claLoad.php');
+            require_once('db/dbManager.php');
+            require_once('db/subject.php');
+            require_once('srvr/table.php');
+            require_once('db/form.php');
+            require_once('db/clas.php');
 
+            $subjectName = subject::getNameArray();
+            $subjectId = subject::getIdArray();
+            $className = clas::getNameArray();
+            $classId = clas::getIdArray();            
+            
             echo "<form action='handler/scoreSubmit.php' method='POST'>";
-            echo "<input name='score_date' value='".date('y-m-d',time())."' style='display:none'\>";
-            echo "<input name='score_time' value='".date('y-m-d h:i:s',time())."' style='display:none'\>";
-            echo "<input name='scorer' value='".$_SESSION['scorer_id']."' style='display:none'\>";
-            for($i=0; $i<count($class); $i++) {
-                echo "<tr>";
-                echo "<th>";
-                echo $class[$i];
-                echo "</th>";
-                for ($j = 0; $j < count($subject); $j++) {
-                    echo "<th>";
-                    echo "<input class='input-def' name='score_pos[]' type='text'/>";
-                    echo "<input name='score_cla[]' value='".$cla_id[$i]."' style='display:none'\>";
-                    echo "<input name='score_sub[]' value='".$sub_id[$j]."' style='display:none'\>";
-                    echo "</th>";
-                }
-                echo "</tr>";
-            }
 
-            require_once('handler/subTableEnd.php');
+            echo form::invisible("score_date", date('y-m-d',time()));
+            echo form::invisible("score_time", date('y-m-d h:i:s',time()));
+            echo form::invisible("scorer", $_SESSION['scorer_id']);
+
+            table::echoHead($subjectName);
+            for ($i = 0; $i < count($classId); $i++) {
+                unset($score);
+                for ($j = 0; $j < count($subjectId); $j++) {
+                    $echoScoreInput = "<input class='input-def' name='score_pos[]' type='text'/>";
+
+                    $echoScoreCla = form::invisible("score_cla[]", $classId[$i]);
+                    $echoScoreSub = form::invisible("score_sub[]", $subjectId[$j]);
+                    $score[] = $echoScoreInput.' '.$echoScoreCla.' '.$echoScoreSub;
+                }
+                table::echoRow($className[$i], $score);
+            }
+            table::echoEnd();
+
             echo "<button type='submit'>Submit</button>";
             echo "</form>";
-            
-            dbManager::closeConnection($connection);
         ?>
         </div>
     </body>

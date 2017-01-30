@@ -13,3 +13,4 @@ class clas {
         return $cla_name;
     }
 }
+?>

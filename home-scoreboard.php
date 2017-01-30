@@ -29,10 +29,10 @@
             <div class="script-div">以下是<?php echo date('y年m月d日',time())?>的计分表:</div>
             <div class="subscript-div">为保证数据已被审核，当日数据会在下午5:30后刷新</div>
         <?php
-            require_once('inc/record.php');
-            require_once('inc/subject.php');
-            require_once('inc/clas.php');
-            require_once('inc/table.php');
+            require_once('db/record.php');
+            require_once('db/subject.php');
+            require_once('db/clas.php');
+            require_once('srvr/table.php');
 
             $subjectName = subject::getNameArray();
             $subjectId = subject::getIdArray();

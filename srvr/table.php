@@ -25,3 +25,4 @@ class table {
         echo "</table>";
     }
 }
+?>

@@ -1,8 +1,10 @@
 <?php
-require_once('../inc/scorer.php');
+
+require_once('../srvr/account.php');
 
 $username = $_POST["username"];
 $password = $_POST["password"];
 
-scorer::signIn($username, $password);
+account::signIn($username, $password);
+
 ?>

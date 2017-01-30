@@ -1,31 +1,34 @@
 <?php
 require_once('dbManager.php');
-require_once('session.php');
 class scorer {
-    public static function signIn($username, $password) {
+    private $scrrId, $scrrName;
+    public static function checkPw($username, $password) {
         $account = self::selectAccount($username);
         if ($account != FALSE) {
             if ($account['scrrPassword'] == $password) {
-                session::register($account['scrrId'], $account['scrrName']);
-                self::turnToEntry();
+                $scrrId = $account['scrrId'];
+                $scrrName = $account['scrrName'];
+                return TRUE;
             } else {
-                self::turnToLogin();
+                return FALSE;
             }
         } else {
-            self::turnToLogin();
+            return FALSE;
         }
     }
 
-    public static function signUp($username, $password) {
+    public static function getScrrId() {
+        return $scrrId;
+    }
+
+    public static function getScrrName() {
+        return $scrrName;
+    }
+
+    public static function add($username, $password) {
         $connection = dbManager::createConnection();
         mysqli_query($connection, "INSERT INTO scorer(scrrName, scrrPassword) VALUES ('".$username."','".$password."')");
         dbManager::closeConnection($connection);
-    }
-
-    public static function checkSession() {
-        if (session::check() == FALSE) {
-	        self::turnToLogin();
-        }
     }
 
     public static function selectAccount($username) {
@@ -42,16 +45,6 @@ class scorer {
 
         return FALSE;
         dbManager::closeConnection();      
-    }
-
-    private static function turnToLogin() {
-        header("location:../home-scorer-login.php");
-        exit;
-    }
-
-    private static function turnToEntry() {
-        header("location:../home-scorer.php");    
-        exit;
     }
 }
 ?>
