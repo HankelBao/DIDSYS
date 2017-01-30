@@ -1,10 +1,12 @@
 <?php
-require_once('../db/scorer.php');
 require_once('session.php');
+require_once('scorer.php');
+
 class account {
     public static function SignIn($username,$password) {
-        if (scorer::checkPw($username, $password) == TRUE) {
-            session::register(scorer::getScrrId(), scorer::getScrrName());
+        $account = scorer::selectAccount($username);
+        if ($account['scrrPassword'] == $password) {
+            session::register($account['scrrId'], $account['scrrName']);
             self::turnToEntry();
         } else {
             self::turnToLogin();

@@ -29,9 +29,9 @@
             <div class="script-div">以下是<?php echo date('y年m月d日',time())?>的计分表:</div>
             <div class="subscript-div">为保证数据已被审核，当日数据会在下午5:30后刷新</div>
         <?php
-            require_once('db/record.php');
-            require_once('db/subject.php');
-            require_once('db/clas.php');
+            require_once('srvr/record.php');
+            require_once('srvr/subject.php');
+            require_once('srvr/clas.php');
             require_once('srvr/table.php');
 
             $subjectName = subject::getNameArray();
