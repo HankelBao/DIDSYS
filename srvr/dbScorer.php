@@ -1,7 +1,6 @@
 <?php
 require_once('dbManager.php');
 class scorer {
-    private $scrrId, $scrrName;
     public static function checkPw($username, $password) {
         $account = self::selectAccount($username);
         if ($account != FALSE) {
@@ -15,14 +14,6 @@ class scorer {
         } else {
             return FALSE;
         }
-    }
-
-    public static function getScrrId() {
-        return $scrrId;
-    }
-
-    public static function getScrrName() {
-        return $scrrName;
     }
 
     public static function add($username, $password) {
@@ -56,5 +47,16 @@ class scorer {
         $row = mysqli_fetch_array($result);
         return $row['scrrName'];
     }
+
+    public static function getIdArray() {
+        $scrr_id = array();
+        $scrr_id = dbManager::getArray("scorer","scrrId");
+        return $scrr_id;
+    }
+    public static function getNameArray() {
+        $scrr_name = array();
+        $scrr_name = dbManager::getArray("scorer","scrrName");
+        return $scrr_name;
+    }        
 }
 ?>

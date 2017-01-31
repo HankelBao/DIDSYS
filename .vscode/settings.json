@@ -6,6 +6,9 @@
         "**/.svn": true,
         "**/.hg": true,
         "**/.DS_Store": true,
-        "**/phpMyAdmin": true
+        "**/phpMyAdmin": true,
+        "**/css": true,
+        "**/js": true,
+        "**/fonts": true
     },
 }
