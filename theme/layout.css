@@ -3,10 +3,12 @@ body {
 }
 
 .nav-div {
-    padding-top: 40px;
+    padding-top: 30px;
+    padding-bottom: 20px;
     padding-left: 10%;
-    width: 80%;
+    width: 100%;
     overflow: auto;
+    background-color: #fafafa;
 }
 
 .link-div {

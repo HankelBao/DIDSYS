@@ -11,7 +11,7 @@
     <body>
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <div class="nav-div">
-            <img src="SFLS.jpg" width="70px" height="70px"/>
+            <img src="SFLS.jpg" class="img-circle" width="70px" height="70px"/>
             <a href="index.php" class="link-div active">SFLS DI Department</a>
             <a href="home-scoreBoard.php" class="link-div">ScoreBoard</a>
             <a href="home-history.php" class="link-div">History</a>
@@ -20,9 +20,7 @@
         <div class="intro-page">
             <div class="title-div">Welcome to SFLS Discipline Inspection Department</div>
             <div class="subtitle-div">A just, powerful department scoring reasonable marks</div>
-            <input style="margin-top:100px" class="input-text" placeholder="your suggestions"/>
-            <button class="submit-button" type="submit">Submit</button>
-            <div class="suggestion-div">Your suggestions will be viewed and considered carefully. Thanks for suggesting.</div>
+
             <embed width="100%" height="100%" src="rule-ref.pdf" type="application/pdf" style="margin:0px;padding:0px;overflow:hidden;display:block;">
         </div>
     </body>
