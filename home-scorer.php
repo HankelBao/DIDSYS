@@ -37,6 +37,7 @@
             require_once('srvr/dbClas.php');
             require_once('srvr/table.php');
             require_once('srvr/form.php');
+            require_once('srvr/dbRecord.php');
 
             $subjectName = subject::getNameArray();
             $subjectId = subject::getIdArray();
@@ -53,7 +54,8 @@
             for ($i = 0; $i < count($classId); $i++) {
                 unset($score);
                 for ($j = 0; $j < count($subjectId); $j++) {
-                    $echoScoreInput = "<input class='input-def' name='score_pos[]' type='text'/>";
+                    $value = record::getScore(date('y-m-d',time()), $subjectId[$j], $classId[$i]);
+                    $echoScoreInput = "<input class='input-def' value='".$value."' name='score_pos[]' type='text'/>";
 
                     $echoScoreCla = form::invisible("score_cla[]", $classId[$i]);
                     $echoScoreSub = form::invisible("score_sub[]", $subjectId[$j]);
@@ -63,7 +65,7 @@
             }
             table::echoEnd();
 
-            echo "<button type='submit'>Submit</button>";
+            echo "<button class='submit-button' style='height:35px;width:100%' type='submit'>Submit</button>";
             echo "</form>";
         ?>
         </div>

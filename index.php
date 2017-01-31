@@ -17,5 +17,15 @@
             <a href="home-history.php" class="link-div">History</a>
             <a href="home-scorer.php" class="link-div">Scorer</a>
         </div>
+        <div class="intro-page">
+            <h1 class="title-div">Welcome to SFLS Discipline Inspection Department</h1>
+            <h2 class="subtitle-div">A just, powerful department scoring reasonable marks</h2>
+            <input style="margin-top:100px" class="input-text" placeholder="your suggestions"/>
+            <button class="submit-button" type="submit">Submit</button>
+            <div class="suggestion-div">Your suggestions will be viewed and considered carefully. Thanks for suggesting.</div>
+        </div>
+        <div class="pos-center-div" style="margin-top:20px">
+            <embed width="100%" height="100%" src="rule-ref.pdf" type="application/pdf" style="margin:0px;padding:0px;">
+        </div>        
     </body>
 </html>

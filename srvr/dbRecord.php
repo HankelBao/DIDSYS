@@ -33,6 +33,10 @@ class record {
                     (NULL, '".$addDate."','".$addCla_id."','".$addSub_id."','".$addScorer_id."','".$addScore."','".$addTime."','');";
             echo $tmpSQL."</br>";
             mysqli_query($dbConnection, $tmpSQL);
+        } else {
+            $tmpSQL = "UPDATE record SET rcrdScore='".$addScore."' WHERE rcrdId = ".$dbRow['rcrdId'];
+            echo $tmpSQL."</br>";
+            mysqli_query($dbConnection, $tmpSQL);
         }
         dbManager::closeConnection($dbConnection);
     }

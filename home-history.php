@@ -5,6 +5,7 @@
         <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
         <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
         <link type="text/css" rel="stylesheet" href="theme/layout.css"/>
+        <link tyoe="text/css" rel="stylesheet" href="theme/home-history.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     </head>
 
@@ -16,7 +17,6 @@
             <a href="home-scoreBoard.php" class="link-div">ScoreBoard</a>
             <a href="home-history.php" class="link-div active">History</a>
             <a href="home-scorer.php" class="link-div">Scorer</a>
-            dddd
         </div>
         <div class="pos-center-div">
         <?php
@@ -29,10 +29,13 @@
             $result = mysqli_query($connection, $tmpSQL);
             dbManager::checkResult($result);
         
+           echo "<ul>";
             while ($row = mysqli_fetch_array($result)) {
+                echo "<li>";
                 echo "评分员".scorer::getNameById($row['rcrd_ScorerId'])."在".$row["rcrdScoreTime"]."给".clas::getNameById($row["rcrd_ClassId"])."对于".subject::getNameById($row["rcrd_SubjectId"])."评分".$row["rcrdScore"];
-                echo "</br>";
+                echo "</li>";
             }
+           echo "</ul>";
             ?>
         </div>
     </body>
