@@ -15,10 +15,10 @@
             <a href="index.php" class="link-div">SFLS DI Department</a>
             <a href="home-scoreBoard.php" class="link-div">ScoreBoard</a>
             <a href="home-history.php" class="link-div">History</a>
-            <a href="home-scorer.php" class="link-div active">Scorer</a>
+            <a href="home-scorer.php" class="link-div active">Inspector</a>
         </div>
         <div class="login-div">
-            <div class="title-div">You are a scorer? Sign in to score!</div>
+            <div class="title-div">It's a honor to become one of SFLS discipline inspectors, now sign up and do what you are made for</div>
             <div class="subtitle-div">Teachers will also get an account, but you cannot score here...</div>
             <form action="handler/signin.php" method="POST">
                 <input placeholder="&nbsp;username" class="input-text" name="username" type="text"></br>

@@ -17,7 +17,7 @@
         <a href="index.php" class="link-div active">SFLS DI Department</a>
         <a href="home-scoreBoard.php" class="link-div">ScoreBoard</a>
         <a href="home-history.php" class="link-div">History</a>
-        <a href="home-scorer.php" class="link-div">Scorer</a>
+        <a href="home-scorer.php" class="link-div">Inspector</a>
     </div>
     <div class="intro-page">
         <h1 class="title-div">Welcome to SFLS Discipline Inspection Department</h1>

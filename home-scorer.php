@@ -21,7 +21,7 @@
             <a href="index.php" class="link-div">SFLS DI Department</a>
             <a href="home-scoreBoard.php" class="link-div">ScoreBoard</a>
             <a href="home-history.php" class="link-div">History</a>
-            <a href="home-scorer.php" class="link-div active">Scorer</a>
+            <a href="home-scorer.php" class="link-div active">Inspector</a>
         </div>
         
         <div class="pos-center-div">
