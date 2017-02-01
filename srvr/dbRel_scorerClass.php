@@ -1,5 +1,5 @@
 <?php
-require('dbManager.php');
+require_once('dbManager.php');
 class rel_scorerClass {
     public static function getClassByScorer($scorerId) {
         $dbConnection = dbManager::createConnection();

@@ -13,7 +13,7 @@
     <div class="left-div">
         <!--这里是评分员名称-->
         <?php
-        require('srvr/dbScorer.php');
+        require_once('srvr/dbScorer.php');
         $scorerId = scorer::getIdArray();
         $scorerName = scorer::getNameArray();
         for ($i = 0; $i < count($scorerId); $i++) {
