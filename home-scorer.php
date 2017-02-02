@@ -65,7 +65,7 @@
             }
             table::echoEnd();
 
-            echo "<button class='submit-button' style='height:35px;width:100%' type='submit'>Submit</button>";
+            echo "<button style='margin-top: 25px;' class='submit-button' style='height:35px;width:100%' type='submit'>Submit</button>";
             echo "</form>";
         ?>
         </div>

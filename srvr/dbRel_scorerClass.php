@@ -1,7 +1,7 @@
 <?php
 require_once('dbManager.php');
 class rel_scorerClass {
-    public static function getClassByScorer($scorerId) {
+    public static function getClassIdByScorerId($scorerId) {
         $dbConnection = dbManager::createConnection();
         
         $tmpSQL = 'SELECT * FROM rel_scorerClass WHERE rsc_ScorerId ='.$scorerId;
@@ -16,3 +16,4 @@ class rel_scorerClass {
         return $classId;
     }
 }
+?>

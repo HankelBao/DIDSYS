@@ -23,7 +23,7 @@
         <h1 class="title-div">Welcome to SFLS Discipline Inspection Department</h1>
         <h2 class="subtitle-div">A just, powerful department scoring reasonable marks</h2>
         <input style="margin-top:100px" class="input-text" placeholder="your suggestions" />
-        <button class="submit-button" type="submit">Submit</button>
+        <button style="margin-top: 25px;" class="submit-button" type="submit">Submit</button>
         <div class="suggestion-div">Your suggestions will be viewed and considered carefully. Thanks for suggesting.</div>
     </div>
 

@@ -21,5 +21,18 @@
 .right-bottom-div {
     width: 100%;
     height: 50%;
-    
+}
+
+.class-permission-owned {
+    height: 45%;
+    border-bottom: 1px solid #D32F2F;
+}
+
+.class-permission-all {
+    height: 45%;
+    border-bottom: 1px solid #D32F2F;
+}
+
+.submit-div {
+    height: 10%;
 }
