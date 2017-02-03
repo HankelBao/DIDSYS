@@ -28,7 +28,30 @@
         $.get("handler/editScorer.php?action=getClassPermissed&scorerId="+scorerId, function(data){
             classPermissedId = JSON.parse(data);
         });
-        
+        classUnpermissedId = compareTwoArray(classPermissedId, classId);
+        $("#class-permission-all").html(result);
+    }
+
+    function compareTwoArray(array1, array2) {
+        var result = new Array();
+        for(var i = 0; i < array2.length; i++){
+            var obj = array2[i];
+            var num = obj.Num;
+            var isExist = false;
+            for(var j = 0; j < array1.length; j++){
+                var aj = array1[j];
+                var n = aj.Num;
+                if(n == num){
+                    isExist = true;
+                    break;
+                }
+            }
+            if(!isExist){
+                result.push(obj);
+            }
+            //alert(result);
+        }
+        return result;
     }
     </script>
 </head>
