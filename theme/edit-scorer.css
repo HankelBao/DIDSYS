@@ -23,12 +23,12 @@
     height: 50%;
 }
 
-.class-permission-owned {
+.class-permissed {
     height: 45%;
     border-bottom: 1px solid #D32F2F;
 }
 
-.class-permission-all {
+.class-unpermissed {
     height: 45%;
     border-bottom: 1px solid #D32F2F;
 }

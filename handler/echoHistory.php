@@ -30,6 +30,6 @@ if ( ($clasSQL != "") || ($subSQL != "") || ($scrrSQL != ""))
     $SQL = "WHERE".$clasSQL.$subSQL.$scrrSQL;
 
 require_once('../srvr/history.php');
-echo $SQL."</br>";
+//echo $SQL."</br>";
 history::echoHistory($SQL);
 ?>

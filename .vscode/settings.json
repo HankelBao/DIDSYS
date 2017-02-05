@@ -2,7 +2,7 @@
 {
     // 配置 glob 模式以排除文件和文件夹。
     "files.exclude": {
-        "**/.git": true,
+        "**/.git": false,
         "**/.svn": true,
         "**/.hg": true,
         "**/.DS_Store": true,

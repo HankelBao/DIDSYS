@@ -5,56 +5,13 @@
     <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
     <script type="text/JavaScript" src="js/jquery.min.js"></script>
+
     <link type="text/css" rel="stylesheet" href="theme/layout.css" />
     <link type="text/css" rel="stylesheet" href="theme/edit-scorer.css" />
+
+    <script type="text/javascript" src="theme/edit-scorer.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <script type="text/javascript">
-    
-    var scorerId;
-    var classPermissedId = new Array();
-    var classUnpermissedId = new Array();
-    var classId = new Array();
-    var className = new Array();
-    var class = new Array();
-
-    function classSubmit() {
-        alert("classSubmit");
-    }
-    function scorerSubmit(scorerId) {
-        $.get("handler/editScorer.php?action=getClassAll", function(data){
-            return_array = JSON.parse(data);
-            classId = return_array.idArray;
-            className = return_array.nameArray;            
-            for (i=0; i<classId.length; i++) {
-                class[classId[i]] = className[i];
-            }
-        });
-        $.get("handler/editScorer.php?action=getClassPermissed&scorerId="+scorerId, function(data){
-            classPermissedId = JSON.parse(data);
-        });
-        classUnpermissedId = compareTwoArray(classId, classPermissedId);
-        $("#class-permission-all").html(classUnpermissedId);
-    }
-
-    function compareTwoArray(array1, array2) {
-        var result = new Array();
-        var isExist;
-
-        for(var i = 0; i < array1.length; i++){
-            isExist = false;
-            for(var j = 0; j < array2.length; j++){
-                if(array1[i] == array2[j]){
-                    isExist = true;
-                    break;
-                }
-            }
-            if(!isExist){
-                result.push(array1[i]);
-            }
-        }
-        return result;
-    }
-    </script>
 </head>
 
 <body>
@@ -72,9 +29,9 @@
     <div class="right-div">
         <div id="class-permission" class="right-top-div">
             <!--权限（班级）-->
-            <div class="class-permission-owned" id="class-permission-owned">
+            <div class="class-permissed" id="class-permissed">
             </div>
-            <div class="class-permission-all" id="class-permission-all">
+            <div class="class-unpermissed" id="class-unpermissed">
             </div>
             <div class="submit-div">
                 <button onclick="classSubmit()" style="height:100%;width:100%" class="submit-button">submit</button>
