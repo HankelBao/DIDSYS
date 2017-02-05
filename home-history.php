@@ -26,7 +26,7 @@
         }
         function AjaxUpdate() {
             url = "handler/echoHistory.php?clasId="+clasId+"&subId="+subId+"&scrrId="+scrrId;
-            //alert(url);
+            //alert(url);En
             $("#history-div").load(url);              
         }   
         </script>
