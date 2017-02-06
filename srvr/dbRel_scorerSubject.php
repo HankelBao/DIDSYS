@@ -1,19 +1,19 @@
 <?php
 require_once('dbManager.php');
-class rel_scorerClass {
-    public static function getClassIdByScorerId($scorerId) {
+class rel_scorerSubject {
+    public static function getSubjectIdByScorerId($scorerId) {
         $dbConnection = dbManager::createConnection();
 
-        $tmpSQL = 'SELECT * FROM rel_scorerClass WHERE rsc_scorerId ='.$scorerId;
+        $tmpSQL = 'SELECT * FROM rel_scorerSubject WHERE rss_ScorerId ='.$scorerId;
         $dbRowCollect = mysqli_query($dbConnection, $tmpSQL);
         dbManager::checkResult($dbRowCollect);
 
-        $classId = array();
+        $subjectId = array();
         while ($row = mysqli_fetch_array($dbRowCollect)) {
-            $classId[] = $row['rsc_classId'];
+            $subjectId[] = $row['rss_subjectId'];
         }
         dbManager::closeConnection($dbConnection);
-        return $classId;
+        return $subjectId;
     }
 }
 ?>

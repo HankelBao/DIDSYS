@@ -40,7 +40,13 @@
 
         <div class="right-bottom-div">
             <!--权限（项目）-->
-
+            <div class="subject-permissed" id="subject-permissed">
+            </div>
+            <div class="subject-unpermissed" id="subject-unpermissed">
+            </div>
+            <div class="submit-div">
+                <button onclick="subjectSubmit()" style="height:100%;width:100%" class="submit-button">submit</button>
+            </div>
         </div>
     </div>
 </body>
