@@ -62,7 +62,10 @@
                 unset($score);
                 for ($j = 0; $j < count($subjectId); $j++) {
                     $value = record::getScore(date('y-m-d',time()), $subjectId[$j], $classId[$i]);
-                    $echoScoreInput = "<input class='input-def' value='".$value."' name='score_pos[]' type='text'/>";
+                    if ($value)
+                        $echoScoreInput = "<input class='input-def' value='".$value."' name='score_pos[]' type='text'/>";
+                    else
+                        $echoScoreInput = "<input class='input-def' value='10' name='score_pos[]' type='text'/>";
 
                     $echoScoreCla = form::invisible("score_cla[]", $classId[$i]);
                     $echoScoreSub = form::invisible("score_sub[]", $subjectId[$j]);
