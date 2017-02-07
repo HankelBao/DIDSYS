@@ -16,7 +16,9 @@ function classSubmit() {
 }
 
 function subjectSubmit() {
-    alert("subjectSubmit");
+    $.get("handler/editScorer.php?action=submitSubject&subjectPermissed="+JSON.stringify(subjectPermissedId)+"&scorerId="+scorerId, function(data) {
+        alert(data);
+    });
 }
 
 function scorerSubmit(fscorerId) {

@@ -1,5 +1,5 @@
-<?php 
-    require_once('srvr/account.php'); 
+<?php
+    require_once('srvr/account.php');
     account::checkSession();
 ?>
 
@@ -23,13 +23,13 @@
             <a href="home-history.php" class="link-div">History</a>
             <a href="home-scorer.php" class="link-div active">Inspector</a>
         </div>
-        
+
         <div class="pos-center-div">
             <div class="title-div">Welcome! <?php echo $_SESSION['scorer_name']; ?> </div>
             <div class="subtitle-div">It's <?php echo date('y年m月d日',time())?> today. Your score will be updated to scoreboard at 5:30</div>
             <div class="warntitle-div">You must score justful and careful!!</div>
         </div>
-        
+
         <div class="pos-center-div">
        <?php
             require_once('srvr/dbManager.php');
@@ -38,12 +38,19 @@
             require_once('srvr/table.php');
             require_once('srvr/form.php');
             require_once('srvr/dbRecord.php');
+            require_once('srvr/dbRel_scorerClass.php');
+            require_once('srvr/dbRel_scorerSubject.php');
 
-            $subjectName = subject::getNameArray();
-            $subjectId = subject::getIdArray();
-            $className = clas::getNameArray();
-            $classId = clas::getIdArray();            
-            
+            $classId = rel_scorerClass::getClassIdByScorerId(session::getScorerId());
+            $className = array();
+            for($i=0; $i<count($classId); $i++)
+                $className[] = clas::getNameById($classId[$i]);
+            $subjectName = array();
+            $subjectId = rel_scorerSubject::getSubjectIdByScorerId(session::getScorerId());
+            for($i=0; $i<count($subjectId); $i++) {
+                $subjectName[] = subject::getNameById($subjectId[$i]);
+            }
+
             echo "<form action='handler/scoreSubmit.php' method='POST'>";
 
             echo form::invisible("score_date", date('y-m-d',time()));

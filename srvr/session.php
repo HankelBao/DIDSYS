@@ -1,4 +1,4 @@
-<?php 
+<?php
 class session {
     public static function active() {
         if(!isset($_SESSION)){
@@ -29,7 +29,7 @@ class session {
     }
 
     public static function getScorerId() {
-        if ($this->check() == TRUE) {
+        if (self::check() == TRUE) {
             return $_SESSION['scorer_id'];
         } else {
             return 0;

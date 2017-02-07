@@ -5,9 +5,13 @@ require_once('dbScorer.php');
 class account {
     public static function SignIn($username,$password) {
         $account = scorer::selectAccount($username);
-        if ($account['scrrPassword'] == $password) {
-            session::register($account['scrrId'], $account['scrrName']);
-            self::turnToEntry();
+        if ($account) {
+            if ($account['scrrPassword'] == $password) {
+                session::register($account['scrrId'], $account['scrrName']);
+                self::turnToEntry();
+            } else {
+                self::turnToLogin();
+            }
         } else {
             self::turnToLogin();
         }
@@ -25,7 +29,7 @@ class account {
     }
 
     private static function turnToEntry() {
-        header("location:../home-scorer.php");    
+        header("location:../home-scorer.php");
         exit;
     }
 }

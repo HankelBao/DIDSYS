@@ -6,7 +6,7 @@ require_once('dbSubject.php');
 class history {
     public static function echoHistory($condition) {
             $connection = dbManager::createConnection();
-            $tmpSQL = "SELECT * FROM record ".$condition;
+            $tmpSQL = "SELECT * FROM record ".$condition." order by rcrdId DESC";
             $result = mysqli_query($connection, $tmpSQL);
             dbManager::checkResult($result);
 

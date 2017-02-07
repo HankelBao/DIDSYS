@@ -22,7 +22,7 @@
         $scorerId = scorer::getIdArray();
         $scorerName = scorer::getNameArray();
         for ($i = 0; $i < count($scorerId); $i++) {
-            echo "<li id='".$scorerId[$i]."' onclick='scorerSubmit(this.id)'>".$scorerName[$i]."</li>";
+            echo "<li style='margin-top:10px' id='".$scorerId[$i]."' onclick='scorerSubmit(this.id)'>".$scorerName[$i]."</li>";
         }
         ?>
     </div>
