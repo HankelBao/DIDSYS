@@ -1,9 +1,12 @@
 <?php
 
 require_once('../srvr/account.php');
+require_once('../srvr/dbManager.php');
 
-$username = $_POST["username"];
-$password = $_POST["password"];
+$con = dbManager::createConnection();
+$username = mysqli_real_escape_string($con,$_POST["username"]);
+$password = mysqli_real_escape_string($con,$_POST["password"]);
+dbManager::closeConnection($con);
 
 account::signIn($username, $password);
 
