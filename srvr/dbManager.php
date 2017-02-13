@@ -3,7 +3,7 @@ class dbManager {
     public static function createConnection() {
         $connection = mysqli_connect("localhost", "root", "201028");
         if (!$connection)
-            die("Could not connect to the databse, please contact Hankel(c)");
+            die("Could not connect to the databse, please contact Hankel G1C4(c)");
 
         $database = mysqli_select_db($connection,'did');
         return $connection;
@@ -24,9 +24,7 @@ class dbManager {
 
         $tmp_sql = "SELECT * FROM ".$tableName;
         $result = mysqli_query($connection, $tmp_sql);
-        if ($result == False) {
-           die('null database');
-        }
+        self::checkResult($result);
 
         $return_array = array();
         while ($row = mysqli_fetch_array($result)) {
