@@ -9,7 +9,7 @@ class history {
         $tmpSQL = "SELECT * FROM record ".$condition." order by rcrdId DESC";
         $result = mysqli_query($connection, $tmpSQL);
         dbManager::checkResult($result);
-
+        
         echo "<ul>";
          while ($row = mysqli_fetch_array($result)) {
              echo "<li>";

@@ -13,7 +13,8 @@
 
         <script type="text/javascript">
             $(function(){
-                $("tr:odd").css("background","rgb(256,186,186)");
+               // $("tr:odd").css("background","#D32F2F");
+                $("tr:odd").css("color","#000000");
             })
         </script>
 
@@ -26,13 +27,19 @@
         </div>
 
         <div class="scoreboard-div">
-            <div class="script-div">以下是<?php echo date('y年m月d日',time())?>的计分表:</div>
+            <div class="script-div">以下是<?php echo date('y年m月d日 H:i:s',time())?>的计分表:</div>
             <div class="subscript-div">为保证数据已被审核，当日数据会在下午5:30后刷新</div>
         <?php
             require_once('srvr/dbRecord.php');
             require_once('srvr/dbSubject.php');
             require_once('srvr/dbClas.php');
             require_once('srvr/table.php');
+
+            $currentHour = date('H:i',time());
+            if ($currentHour >= '17:30')
+                $displayDate = date('y-m-d',time());
+            else 
+                $displayDate = date("Y-m-d",strtotime("-1 day"));
 
             $subjectName = subject::getNameArray();
             $subjectId = subject::getIdArray();
@@ -43,7 +50,7 @@
             for ($i = 0; $i < count($classId); $i++) {
                 unset($score);
                 for ($j = 0; $j < count($subjectId); $j++) { 
-                    $score[] = record::getScore(date('y-m-d',time()), $subjectId[$j], $classId[$i]);
+                    $score[] = record::getScore($displayDate, $subjectId[$j], $classId[$i]);
                 }
                 table::echoRow($className[$i], $score);
             }
