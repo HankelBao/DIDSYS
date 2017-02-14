@@ -2,10 +2,9 @@
 require_once('dbManager.php');
 class record {
     public static function search($srchDate, $srchSub_id, $srchCla_id) {
-        $dbConnection = dbManager::createConnection();
         $tmpSQL = 'SELECT * FROM record WHERE 
                 rcrdDate = "'.$srchDate.'" and rcrd_subjectId = '.$srchSub_id.' and rcrd_classId = '.$srchCla_id;
-        $dbRowCollect = mysqli_query($dbConnection, $tmpSQL);
+        $dbRowCollect = mysqli_query(dbManager::getConnection(), $tmpSQL);
         if($dbRowCollect) {
             $dbRow = mysqli_fetch_array($dbRowCollect);
             if ($dbRow)
@@ -15,7 +14,6 @@ class record {
         } else {
             return NULL;
         } 
-        dbManager::closeConnection($dbConnection);
     }
 
     public static function getScore($srchDate, $srchSub_id, $srchCla_id) {
@@ -24,7 +22,6 @@ class record {
     }
     
     public static function add($addDate, $addSub_id, $addCla_id, $addScorer_id, $addScore, $addTime) {
-        $dbConnection = dbManager::createConnection();
         $dbRow = self::search($addDate, $addSub_id, $addCla_id);
         if ($dbRow == NULL) {
             $tmpSQL = "INSERT INTO record 
@@ -32,13 +29,12 @@ class record {
                 VALUES 
                     (NULL, '".$addDate."','".$addCla_id."','".$addSub_id."','".$addScorer_id."','".$addScore."','".$addTime."','');";
             echo $tmpSQL."</br>";
-            mysqli_query($dbConnection, $tmpSQL);
+            mysqli_query(dbManager::getConnection(), $tmpSQL);
         } else {
             $tmpSQL = "UPDATE record SET rcrdScore='".$addScore."' WHERE rcrdId = ".$dbRow['rcrdId'];
             echo $tmpSQL."</br>";
-            mysqli_query($dbConnection, $tmpSQL);
+            mysqli_query(dbManager::getConnection(), $tmpSQL);
         }
-        dbManager::closeConnection($dbConnection);
     }
 }
 ?>

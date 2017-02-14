@@ -13,6 +13,13 @@ class dbManager {
         mysqli_close($connection); 
     }
     
+    public static $connection;
+    public static function getConnection(){
+        if(!self::$connection)
+            self::$connection = self::createConnection();
+        return self::$connection;
+    }
+
     public static function checkResult($result) {
         if ($result == False) {
            die('null database');

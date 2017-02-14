@@ -27,19 +27,20 @@
         </div>
 
         <div class="scoreboard-div">
-            <div class="script-div">以下是<?php echo date('y年m月d日 H:i:s',time())?>的计分表:</div>
+        <?php
+            $currentHour = date('H:i',time());
+            if ($currentHour >= '17:30')
+                $displayDate = date('Y-m-d',time());
+            else 
+                $displayDate = date("Y-m-d",strtotime("-1 day"));        
+        ?>
+            <div class="script-div">以下是<?php echo $displayDate?>的计分表:</div>
             <div class="subscript-div">为保证数据已被审核，当日数据会在下午5:30后刷新</div>
         <?php
             require_once('srvr/dbRecord.php');
             require_once('srvr/dbSubject.php');
             require_once('srvr/dbClas.php');
             require_once('srvr/table.php');
-
-            $currentHour = date('H:i',time());
-            if ($currentHour >= '17:30')
-                $displayDate = date('y-m-d',time());
-            else 
-                $displayDate = date("Y-m-d",strtotime("-1 day"));
 
             $subjectName = subject::getNameArray();
             $subjectId = subject::getIdArray();

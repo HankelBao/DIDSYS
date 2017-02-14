@@ -13,10 +13,8 @@ class clas {
         return $cla_name;
     }
     public static function getNameById($id) {
-        $connection = dbManager::createConnection();
-        $result = mysqli_query($connection, 'SELECT * FROM class WHERE clsId="'.$id.'"');
-        dbManager::checkResult($result);
-        dbManager::closeConnection($connection);         
+        $result = mysqli_query(dbManager::getConnection(), 'SELECT * FROM class WHERE clsId="'.$id.'"');
+        dbManager::checkResult($result);        
 
         $row = mysqli_fetch_array($result);
         return $row['clsName'];

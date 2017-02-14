@@ -21,8 +21,8 @@
             <div class="title-div">It's a honor to become one of SFLS discipline inspectors, now sign up and do what you are made for</div>
             <div class="subtitle-div">Teachers will also get an account, but you cannot score here...</div>
             <form action="handler/signin.php" method="POST">
-                <input placeholder="&nbsp;username" class="input-text" name="username" type="text"></br>
-                <input placeholder="&nbsp;password" class="input-text" name="password" type="password"></br>
+                <input placeholder="username" class="input-text" name="username" type="text"></br>
+                <input placeholder="password" class="input-text" name="password" type="password"></br>
                 <button style="margin-top: 25px;" class="submit-button" type="submit">Sign In</button>
             </form>
         </div>

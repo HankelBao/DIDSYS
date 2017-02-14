@@ -35,27 +35,23 @@ if($_GET['action']) {
         $JSONClass = $_GET['classPermissed'];
         $class = json_decode($JSONClass);
 
-        $dbConnection = dbManager::createConnection();
         $tmpSQL = 'DELETE FROM rel_scorerClass WHERE rsc_scorerId='.$_GET['scorerId'].';';
-        mysqli_query($dbConnection, $tmpSQL);
+        mysqli_query(dbManager::getConnection(), $tmpSQL);
         for ($i=0; $i<count($class); $i++) {
             $tmpSQL = 'INSERT INTO rel_scorerClass(rsc_scorerId, rsc_classId) VALUES ('.$_GET['scorerId'].','.$class[$i].');';
-            mysqli_query($dbConnection, $tmpSQL);
+            mysqli_query(dbManager::getConnection(), $tmpSQL);
         }
-        dbManager::closeConnection($dbConnection);
         break;
     case "submitSubject":
         $JSONSubject = $_GET['subjectPermissed'];
         $subject = json_decode($JSONSubject);
 
-        $dbConnection = dbManager::createConnection();
         $tmpSQL = 'DELETE FROM rel_scorerSubject WHERE rss_scorerId='.$_GET['scorerId'].';';
-        mysqli_query($dbConnection, $tmpSQL);
+        mysqli_query(dbManager::getConnection(), $tmpSQL);
         for ($i=0; $i<count($subject); $i++) {
             $tmpSQL = 'INSERT INTO rel_scorerSubject(rss_scorerId, rss_subjectId) VALUES ('.$_GET['scorerId'].','.$subject[$i].');';
-            mysqli_query($dbConnection, $tmpSQL);
+            mysqli_query(dbManager::getConnection(), $tmpSQL);
         }
-        dbManager::closeConnection($dbConnection);
         break;
     }
 }

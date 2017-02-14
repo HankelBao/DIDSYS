@@ -24,7 +24,7 @@
         <h2 class="subtitle-div" style="margin-bottom:5px">A just, powerful department scoring reasonable marks</h2>
         <h2 class="subtitle-div" style="margin-top:0px;font-size:15px">Powered by HankelBao</h2>
         <form action="handler/suggestionCommit.php" method="POST">
-            <input name="suggestionForm" style="margin-top:100px;padding-left:10px;" class="input-text" placeholder="your suggestions" />
+            <input name="suggestionForm" style="margin-top:100px;" class="input-text" placeholder="your suggestions" />
             <button style="margin-top: 25px;" class="submit-button" type="submit">Submit</button>
         </form>
         <div class="suggestion-div">Your suggestions will be viewed and considered carefully. Thanks for suggesting.</div>

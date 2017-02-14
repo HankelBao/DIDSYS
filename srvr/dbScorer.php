@@ -17,15 +17,11 @@ class scorer {
     }
 
     public static function add($username, $password) {
-        $connection = dbManager::createConnection();
-        mysqli_query($connection, "INSERT INTO scorer(scrrName, scrrPassword) VALUES ('".$username."','".$password."')");
-        dbManager::closeConnection($connection);
+        mysqli_query(dbManager::getConnection(), "INSERT INTO scorer(scrrName, scrrPassword) VALUES ('".$username."','".$password."')");
     }
 
     public static function selectAccount($username) {
-        $connection = dbManager::createConnection();
-
-        $result = mysqli_query($connection, 'SELECT * FROM scorer WHERE scrrName="'.$username.'"');
+        $result = mysqli_query(dbManager::getConnection(), 'SELECT * FROM scorer WHERE scrrName="'.$username.'"');
         if ($result == False) {
             return FALSE;
         }
@@ -34,15 +30,12 @@ class scorer {
             return $row;
         }
 
-        return FALSE;
-        dbManager::closeConnection();      
+        return FALSE; 
     }
 
     public static function getNameById($id) {
-        $connection = dbManager::createConnection();
-        $result = mysqli_query($connection, 'SELECT * FROM scorer WHERE scrrId="'.$id.'"');
-        dbManager::checkResult($result);
-        dbManager::closeConnection($connection);         
+        $result = mysqli_query(dbManager::getConnection(), 'SELECT * FROM scorer WHERE scrrId="'.$id.'"');
+        dbManager::checkResult($result);     
 
         $row = mysqli_fetch_array($result);
         return $row['scrrName'];
