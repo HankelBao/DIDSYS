@@ -22,6 +22,11 @@
             <a href="home-scoreBoard.php" class="link-div">ScoreBoard</a>
             <a href="home-history.php" class="link-div">History</a>
             <a href="home-scorer.php" class="link-div active">Inspector</a>
+            <script type="text/Javascript">
+                function ShowDescription(){
+                    //$(this).siblings("#des").hide();
+                }
+            </script>
         </div>
 
         <div class="pos-center-div">
@@ -66,10 +71,13 @@
                         $echoScoreInput = "<input class='input-def' value='".$value."' name='score_pos[]' type='text'/>";
                     else
                         $echoScoreInput = "<input class='input-def' value='10' name='score_pos[]' type='text'/>";
+                    
+                    $echoDesInput = "<label onclick='ShowDescription()'>C</label>";
+                    $echoDesInput .= "<input id='des' name='score_description[]' />";
 
                     $echoScoreCla = form::invisible("score_cla[]", $classId[$i]);
                     $echoScoreSub = form::invisible("score_sub[]", $subjectId[$j]);
-                    $score[] = $echoScoreInput.' '.$echoScoreCla.' '.$echoScoreSub;
+                    $score[] = $echoScoreInput.' '.$echoScoreCla.' '.$echoScoreSub.' ';//.$echoDesInput;
                 }
                 table::echoRow($className[$i], $score);
             }
