@@ -14,7 +14,7 @@
         <script type="text/javascript">
             $(function(){
                // $("tr:odd").css("background","#D32F2F");
-                $("tr:odd").css("color","#000000");
+               // $("tr:odd").css("color","#000000");
             })
         </script>
 
