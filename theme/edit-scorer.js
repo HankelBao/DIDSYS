@@ -77,13 +77,13 @@ function compareTwoArray(array1, array2) {
 function updateClass() {
     var permissedHTML = "";
     for (i = 0; i < classPermissedId.length; i++) {
-        permissedHTML += "<label onclick='classChangeFromPermissed(this.id)' id=" + classPermissedId[i] + ">" + className[classPermissedId[i]] + " </label>";
+        permissedHTML += "<label onclick='classChangeFromPermissed(this.id)' id=" + classPermissedId[i] + ">" + className[classPermissedId[i]] + ";" + " </label>";
     }
     $("#class-permissed").html(permissedHTML);
 
     var unpermissedHTML = "";
     for (i = 0; i < classUnpermissedId.length; i++) {
-        unpermissedHTML += "<label onclick='classChangeFromUnpermissed(this.id)' id=" + classUnpermissedId[i] + ">" + className[classUnpermissedId[i]] + " </label>";
+        unpermissedHTML += "<label onclick='classChangeFromUnpermissed(this.id)' id=" + classUnpermissedId[i] + ">" + className[classUnpermissedId[i]] + ";" + " </label>";
     }
     $("#class-unpermissed").html(unpermissedHTML);
 }
@@ -91,13 +91,13 @@ function updateClass() {
 function updateSubject() {
     var permissedHTML = "";
     for (i = 0; i < subjectPermissedId.length; i++) {
-        permissedHTML += "<label onclick='subjectChangeFromPermissed(this.id)' id=" + subjectPermissedId[i] + ">" + subjectName[subjectPermissedId[i]] + " </label>";
+        permissedHTML += "<label onclick='subjectChangeFromPermissed(this.id)' id=" + subjectPermissedId[i] + ">" + subjectName[subjectPermissedId[i]] + ";" +" </label>";
     }
     $("#subject-permissed").html(permissedHTML);
 
     var unpermissedHTML = "";
     for (i = 0; i < subjectUnpermissedId.length; i++) {
-        unpermissedHTML += "<label onclick='subjectChangeFromUnpermissed(this.id)' id=" + subjectUnpermissedId[i] + ">" + subjectName[subjectUnpermissedId[i]] + " </label>";
+        unpermissedHTML += "<label onclick='subjectChangeFromUnpermissed(this.id)' id=" + subjectUnpermissedId[i] + ">" + subjectName[subjectUnpermissedId[i]] + ";" + " </label>";
     }
     $("#subject-unpermissed").html(unpermissedHTML);
 }

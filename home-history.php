@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>DID - Welcome</title>
+        <title>苏外纪检部</title>
         <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
         <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
         <link type="text/css" rel="stylesheet" href="theme/layout.css"/>
@@ -11,7 +11,7 @@
         <script type="text/javascript">
         var clasId;
         var subId;
-        var scrrId;     
+        var scrrId;
         function clasChange(value) {
             clasId = value;
             AjaxUpdate();
@@ -27,8 +27,8 @@
         function AjaxUpdate() {
             url = "handler/echoHistory.php?clasId="+clasId+"&subId="+subId+"&scrrId="+scrrId;
             //alert(url);En
-            $("#history-div").load(url);              
-        }   
+            $("#history-div").load(url);
+        }
         </script>
     </head>
 
@@ -36,10 +36,12 @@
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <div class="nav-div">
             <img src="SFLS.jpg" width="70px" height="70px"/>
-            <a href="index.php" class="link-div">SFLS DI Department</a>
-            <a href="home-scoreBoard.php" class="link-div">ScoreBoard</a>
-            <a href="home-history.php" class="link-div active">History</a>
-            <a href="home-scorer.php" class="link-div">Inspector</a>
+            <a href="index.php" class="link-div">苏外纪检部</a>
+            <a href="home-rules.php" class="link-div">规则</a>
+            <a href="home-scoreBoard.php" class="link-div">记分板</a>
+            <a href="home-history.php" class="link-div active">历史</a>
+            <a href="home-stat.php" class="link-div">统计</a>
+            <a href="home-scorer.php" class="link-div">评分入口</a>
         </div>
         <div class="pos-center-div">
             <form>
@@ -53,7 +55,7 @@
                     for ($i = 0; $i < count($scorerId); $i++) {
                         echo "<option id='".$scorerId[$i]."'>".$scorerName[$i]."</option>";
                     }
-                ?>                
+                ?>
                 </select>
 
                 Class:
@@ -62,10 +64,10 @@
                 <?php
                     require_once('srvr/dbClas.php');
                     $className = clas::getNameArray();
-                    $classId = clas::getIdArray(); 
+                    $classId = clas::getIdArray();
                     for ($i = 0; $i < count($classId); $i++) {
                         echo "<option id='".$classId[$i]."'>".$className[$i]."</option>";
-                    }                    
+                    }
                 ?>
                 </select>
 
@@ -78,7 +80,7 @@
                     $subjectId = subject::getIdArray();
                     for ($i = 0; $i < count($subjectId); $i++) {
                         echo "<option id='".$subjectId[$i]."'>".$subjectName[$i]."</option>";
-                    }                    
+                    }
                 ?>
                 </select>
             </form>

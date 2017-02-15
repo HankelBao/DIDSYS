@@ -13,4 +13,5 @@ require_once('../srvr/dbManager.php');
             record::add(date('Y-m-d',time()), $score_sub[$x], $score_cla[$x],$scorer,$score_pos[$x],$score_time);
         }
     }
+    header("location:../home-scoreboard.php");
 ?>

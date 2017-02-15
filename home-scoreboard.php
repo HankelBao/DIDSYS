@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>DID - Welcome</title>
+        <title>苏外纪检部</title>
         <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
         <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
         <link type="text/css" rel="stylesheet" href="theme/layout.css"/>
@@ -13,17 +13,19 @@
 
         <script type="text/javascript">
             $(function(){
-               // $("tr:odd").css("background","#D32F2F");
+                $("tr:odd").css("background","#FF5151");
                // $("tr:odd").css("color","#000000");
             })
         </script>
 
         <div class="nav-div">
             <img src="SFLS.jpg" width="70px" height="70px"/>
-            <a href="index.php" class="link-div">SFLS DI Department</a>
-            <a href="home-scoreBoard.php" class="link-div active">ScoreBoard</a>
-            <a href="home-history.php" class="link-div">History</a>
-            <a href="home-scorer.php" class="link-div">Inspector</a>
+            <a href="index.php" class="link-div">苏外纪检部</a>
+            <a href="home-rules.php" class="link-div">规则</a>
+            <a href="home-scoreBoard.php" class="link-div active">记分板</a>
+            <a href="home-history.php" class="link-div">历史</a>
+            <a href="home-stat.php" class="link-div">统计</a>
+            <a href="home-scorer.php" class="link-div">评分入口</a>
         </div>
 
         <div class="scoreboard-div">
@@ -31,8 +33,8 @@
             $currentHour = date('H:i',time());
             if ($currentHour >= '17:30')
                 $displayDate = date('Y-m-d',time());
-            else 
-                $displayDate = date("Y-m-d",strtotime("-1 day"));        
+            else
+                $displayDate = date("Y-m-d",strtotime("-1 day"));
         ?>
             <div class="script-div">以下是<?php echo $displayDate?>的计分表:</div>
             <div class="subscript-div">为保证数据已被审核，当日数据会在下午5:30后刷新</div>
@@ -50,7 +52,7 @@
             table::echoHead($subjectName);
             for ($i = 0; $i < count($classId); $i++) {
                 unset($score);
-                for ($j = 0; $j < count($subjectId); $j++) { 
+                for ($j = 0; $j < count($subjectId); $j++) {
                     $score[] = record::getScore($displayDate, $subjectId[$j], $classId[$i]);
                 }
                 table::echoRow($className[$i], $score);

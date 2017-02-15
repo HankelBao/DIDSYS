@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>DID - Welcome</title>
+        <title>苏外纪检部</title>
         <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
         <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
         <link type="text/css" rel="stylesheet" href="theme/layout.css"/>
@@ -12,10 +12,12 @@
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <div class="nav-div">
             <img src="SFLS.jpg" width="70px" height="70px"/>
-            <a href="index.php" class="link-div">SFLS DI Department</a>
-            <a href="home-scoreBoard.php" class="link-div">ScoreBoard</a>
-            <a href="home-history.php" class="link-div">History</a>
-            <a href="home-scorer.php" class="link-div active">Inspector</a>
+            <a href="index.php" class="link-div">苏外纪检部</a>
+            <a href="home-rules.php" class="link-div">规则</a>
+            <a href="home-scoreBoard.php" class="link-div">记分板</a>
+            <a href="home-history.php" class="link-div">历史</a>
+            <a href="home-stat.php" class="link-div">统计</a>
+            <a href="home-scorer.php" class="link-div active">评分入口</a>
         </div>
         <div class="login-div">
             <div class="title-div">It's a honor to become one of SFLS discipline inspectors, now sign up and do what you are made for</div>

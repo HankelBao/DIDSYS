@@ -5,7 +5,7 @@
 
 <html>
     <head>
-        <title>DID - Welcome</title>
+        <title>苏外纪检部</title>
         <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
         <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
         <link type="text/css" rel="stylesheet" href="theme/layout.css"/>
@@ -18,15 +18,12 @@
 
         <div class="nav-div">
             <img src="SFLS.jpg" width="70px" height="70px"/>
-            <a href="index.php" class="link-div">SFLS DI Department</a>
-            <a href="home-scoreBoard.php" class="link-div">ScoreBoard</a>
-            <a href="home-history.php" class="link-div">History</a>
-            <a href="home-scorer.php" class="link-div active">Inspector</a>
-            <script type="text/Javascript">
-                function ShowDescription(){
-                    //$(this).siblings("#des").hide();
-                }
-            </script>
+            <a href="index.php" class="link-div">苏外纪检部</a>
+            <a href="home-rules.php" class="link-div">规则</a>
+            <a href="home-scoreBoard.php" class="link-div">记分板</a>
+            <a href="home-history.php" class="link-div">历史</a>
+            <a href="home-stat.php" class="link-div">统计</a>
+            <a href="home-scorer.php" class="link-div active">评分入口</a>
         </div>
 
         <div class="pos-center-div">
@@ -71,7 +68,7 @@
                         $echoScoreInput = "<input class='input-def' value='".$value."' name='score_pos[]' type='text'/>";
                     else
                         $echoScoreInput = "<input class='input-def' value='10' name='score_pos[]' type='text'/>";
-                    
+
                     $echoDesInput = "<label onclick='ShowDescription()'>C</label>";
                     $echoDesInput .= "<input id='des' name='score_description[]' />";
 

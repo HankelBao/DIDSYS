@@ -2,7 +2,7 @@
 require_once('dbManager.php');
 class record {
     public static function search($srchDate, $srchSub_id, $srchCla_id) {
-        $tmpSQL = 'SELECT * FROM record WHERE 
+        $tmpSQL = 'SELECT * FROM record WHERE
                 rcrdDate = "'.$srchDate.'" and rcrd_subjectId = '.$srchSub_id.' and rcrd_classId = '.$srchCla_id;
         $dbRowCollect = mysqli_query(dbManager::getConnection(), $tmpSQL);
         if($dbRowCollect) {
@@ -13,26 +13,26 @@ class record {
                 return NULL;
         } else {
             return NULL;
-        } 
+        }
     }
 
     public static function getScore($srchDate, $srchSub_id, $srchCla_id) {
         $dbRow = self::search($srchDate, $srchSub_id, $srchCla_id);
         return $dbRow['rcrdScore'];
     }
-    
+
     public static function add($addDate, $addSub_id, $addCla_id, $addScorer_id, $addScore, $addTime) {
         $dbRow = self::search($addDate, $addSub_id, $addCla_id);
         if ($dbRow == NULL) {
-            $tmpSQL = "INSERT INTO record 
-                    (rcrdId, rcrdDate, rcrd_classId, rcrd_subjectId, rcrd_scorerId, rcrdScore, rcrdScoreTime, rcrdDescription) 
-                VALUES 
+            $tmpSQL = "INSERT INTO record
+                    (rcrdId, rcrdDate, rcrd_classId, rcrd_subjectId, rcrd_scorerId, rcrdScore, rcrdScoreTime, rcrdDescription)
+                VALUES
                     (NULL, '".$addDate."','".$addCla_id."','".$addSub_id."','".$addScorer_id."','".$addScore."','".$addTime."','');";
-            echo $tmpSQL."</br>";
+            //echo $tmpSQL."</br>";
             mysqli_query(dbManager::getConnection(), $tmpSQL);
         } else {
             $tmpSQL = "UPDATE record SET rcrdScore='".$addScore."' WHERE rcrdId = ".$dbRow['rcrdId'];
-            echo $tmpSQL."</br>";
+            //echo $tmpSQL."<br/>";
             mysqli_query(dbManager::getConnection(), $tmpSQL);
         }
     }
