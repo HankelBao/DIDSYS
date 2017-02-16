@@ -29,7 +29,7 @@
         <div class="pos-center-div">
             <div class="title-div">Welcome! <?php echo $_SESSION['scorer_name']; ?> </div>
             <div class="subtitle-div">It's <?php echo date('y年m月d日',time())?> today. Your score will be updated to scoreboard at 5:30</div>
-            <div class="warntitle-div">You must score justful and careful!!</div>
+            <div class="warntitle-div">You must score carefully, very carefully!!</div>
         </div>
 
         <div class="pos-center-div">
