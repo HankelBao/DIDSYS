@@ -1,3 +1,12 @@
+<?php
+if(!$_GET['pw']) {
+    die("");
+}
+if($_GET['pw'] != "201028qwer098724680rp") {
+    die("");
+}
+ ?>
+
 <html>
 
 <head>

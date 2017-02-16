@@ -12,7 +12,7 @@
 <body>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <div class="nav-div">
-        <img src="SFLS.jpg" width="70px" height="70px"/>
+        <img src="SFLS.jpg" width="70px" height="70px" />
         <a href="index.php" class="link-div active">苏外纪检部</a>
         <a href="home-rules.php" class="link-div">规则</a>
         <a href="home-scoreBoard.php" class="link-div">记分板</a>

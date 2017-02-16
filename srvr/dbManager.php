@@ -1,7 +1,7 @@
 <?php
 class dbManager {
     public static function createConnection() {
-        $connection = mysqli_connect("localhost", "root", "201028");
+        $connection = mysqli_connect("localhost", "system", "102233");
         if (!$connection)
             die("Could not connect to the databse, please contact Hankel G1C4(c)");
 
