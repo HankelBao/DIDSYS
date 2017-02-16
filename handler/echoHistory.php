@@ -3,18 +3,17 @@ $clasId = $_GET['clasId'];
 $subId = $_GET['subId'];
 $scrrId = $_GET['scrrId'];
 
-
 if($clasId != 'undefined')
     $clasSQL = " rcrd_classId = '".$clasId."'";
-else 
+else
     $clasSQL = "";
 
 if($subId != 'undefined')
-    if ($clasSQL == "") 
+    if ($clasSQL == "")
         $subSQL = " rcrd_subjectId = '".$subId."'";
     else
         $subSQL = " AND rcrd_subjectId = '".$subId."'";
-else 
+else
     $subSQL = "";
 
 if($scrrId != 'undefined')

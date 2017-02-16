@@ -10,13 +10,13 @@ var subjectPermissedId = new Array();
 var subjectUnpermissedId = new Array();
 
 function classSubmit() {
-    $.get("handler/editScorer.php?action=submitClass&classPermissed="+JSON.stringify(classPermissedId)+"&scorerId="+scorerId, function(data) {
+    $.get("handler/editScorer.php?action=submitClass&classPermissed=" + JSON.stringify(classPermissedId) + "&scorerId=" + scorerId, function(data) {
         alert(data);
     });
 }
 
 function subjectSubmit() {
-    $.get("handler/editScorer.php?action=submitSubject&subjectPermissed="+JSON.stringify(subjectPermissedId)+"&scorerId="+scorerId, function(data) {
+    $.get("handler/editScorer.php?action=submitSubject&subjectPermissed=" + JSON.stringify(subjectPermissedId) + "&scorerId=" + scorerId, function(data) {
         alert(data);
     });
 }
@@ -25,7 +25,7 @@ function scorerSubmit(fscorerId) {
     /*
      * First, procedures about class permission, load all && permissed
      */
-     scorerId = fscorerId;
+    scorerId = fscorerId;
     $.get("handler/editScorer.php?action=getClassAll", function(data) {
         return_array = JSON.parse(data);
         classId = return_array.idArray;
@@ -91,7 +91,7 @@ function updateClass() {
 function updateSubject() {
     var permissedHTML = "";
     for (i = 0; i < subjectPermissedId.length; i++) {
-        permissedHTML += "<label onclick='subjectChangeFromPermissed(this.id)' id=" + subjectPermissedId[i] + ">" + subjectName[subjectPermissedId[i]] + ";" +" </label>";
+        permissedHTML += "<label onclick='subjectChangeFromPermissed(this.id)' id=" + subjectPermissedId[i] + ">" + subjectName[subjectPermissedId[i]] + ";" + " </label>";
     }
     $("#subject-permissed").html(permissedHTML);
 

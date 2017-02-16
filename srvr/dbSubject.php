@@ -13,7 +13,7 @@ class subject {
     }
     public static function getNameById($id) {
         $result = mysqli_query(dbManager::getConnection(), 'SELECT * FROM subject WHERE subId="'.$id.'"');
-        dbManager::checkResult($result);      
+        dbManager::checkResult($result);
 
         $row = mysqli_fetch_array($result);
         return $row['subName'];

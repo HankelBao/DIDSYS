@@ -30,12 +30,12 @@ class scorer {
             return $row;
         }
 
-        return FALSE; 
+        return FALSE;
     }
 
     public static function getNameById($id) {
         $result = mysqli_query(dbManager::getConnection(), 'SELECT * FROM scorer WHERE scrrId="'.$id.'"');
-        dbManager::checkResult($result);     
+        dbManager::checkResult($result);
 
         $row = mysqli_fetch_array($result);
         return $row['scrrName'];
@@ -50,6 +50,6 @@ class scorer {
         $scrr_name = array();
         $scrr_name = dbManager::getArray("scorer","scrrName");
         return $scrr_name;
-    }        
+    }
 }
 ?>

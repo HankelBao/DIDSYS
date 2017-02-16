@@ -67,7 +67,7 @@
                     if ($value)
                         $echoScoreInput = "<input class='input-def' value='".$value."' name='score_pos[]' type='text'/>";
                     else
-                        $echoScoreInput = "<input class='input-def' value='10' name='score_pos[]' type='text'/>";
+                        $echoScoreInput = "<input class='input-def' name='score_pos[]' type='text'/>";
 
                     $echoDesInput = "<label onclick='ShowDescription()'>C</label>";
                     $echoDesInput .= "<input id='des' name='score_description[]' />";

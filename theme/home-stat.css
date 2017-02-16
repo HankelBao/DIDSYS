@@ -1,14 +1,14 @@
 .button-select-view {
-    width:33%;
-    margin:0px;
-    background-color:#D32F2F;
-    border:1px solid #D32F2F;
-    color:#FFFFFF;
-    font-size:18px;
+    width: 33%;
+    margin: 0px;
+    background-color: #D32F2F;
+    border: 1px solid #D32F2F;
+    color: #FFFFFF;
+    font-size: 18px;
 }
 
 ul {
-    margin-top:5px;
+    margin-top: 5px;
     list-style-type: none;
     width: 99.8%;
     margin: 0px;

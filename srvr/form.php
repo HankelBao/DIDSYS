@@ -10,7 +10,7 @@ class form {
                 echo '<input type="text" class="form-control">';
                 echo '<div class="input-group-addon">y</div>';
                 echo '<input type="text" class="form-control">';
-                echo '<div class="input-group-addon">m</div>';                
+                echo '<div class="input-group-addon">m</div>';
                 echo '<input type="text" class="form-control">';
                 echo '<div class="input-group-addon">d</div>';
             echo '</div>';

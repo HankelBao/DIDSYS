@@ -10,9 +10,9 @@ class dbManager {
     }
 
     public static function closeConnection($connection) {
-        mysqli_close($connection); 
+        mysqli_close($connection);
     }
-    
+
     public static $connection;
     public static function getConnection(){
         if(!self::$connection)
