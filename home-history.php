@@ -6,7 +6,7 @@
         <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
         <link type="text/css" rel="stylesheet" href="theme/layout.css"/>
         <link tyoe="text/css" rel="stylesheet" href="theme/home-history.css" />
-        <script type="text/JavaScript" src="js/jquery.min.js"></script>
+        <script type="text/javaScript" src="js/jquery.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
         <script type="text/javascript">
         var clasId;
