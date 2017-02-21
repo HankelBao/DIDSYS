@@ -10,10 +10,14 @@ class history {
         dbManager::checkResult($result);
 
         echo "<ul>";
+        $i = 0;
          while ($row = mysqli_fetch_array($result)) {
+             $i++;
              echo "<li>";
              echo "评分员".scorer::getNameById($row['rcrd_ScorerId'])."在".$row["rcrdScoreTime"]."给".clas::getNameById($row["rcrd_ClassId"])."对于".subject::getNameById($row["rcrd_SubjectId"])."评分".$row["rcrdScore"];
              echo "</li>";
+             if ($i >= 50)
+                break;
          }
         echo "</ul>";
     }
