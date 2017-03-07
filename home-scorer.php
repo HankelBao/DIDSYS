@@ -64,13 +64,16 @@
                 unset($score);
                 for ($j = 0; $j < count($subjectId); $j++) {
                     $value = record::getScore(date('y-m-d',time()), $subjectId[$j], $classId[$i]);
+                    $des = record::getDes(date('y-m-d',time()), $subjectId[$j], $classId[$i]);
                     if ($value)
                         $echoScoreInput = "<input class='input-def' value='".$value."' name='score_pos[]' type='text'/>";
                     else
                         $echoScoreInput = "<input class='input-def' name='score_pos[]' type='text'/>";
-
-                    $echoDesInput = "<label onclick='ShowDescription()'>C</label>";
-                    $echoDesInput .= "<input id='des' name='score_description[]' />";
+                    
+                    if ($des)
+                        $echoScoreInput .= "<input class='input-def' value='".$des."'name='score_des[]' type='text'/>";
+                    else
+                        $echoScoreInput .= "<input class='input-def' placeholder='description' name='score_des[]' type='text'/>";
 
                     $echoScoreCla = form::invisible("score_cla[]", $classId[$i]);
                     $echoScoreSub = form::invisible("score_sub[]", $subjectId[$j]);

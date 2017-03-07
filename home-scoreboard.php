@@ -51,11 +51,15 @@
 
             table::echoHead($subjectName);
             for ($i = 0; $i < count($classId); $i++) {
-                unset($score);
+                unset($disStr);
                 for ($j = 0; $j < count($subjectId); $j++) {
-                    $score[] = record::getScore($displayDate, $subjectId[$j], $classId[$i]);
+                    $str = record::getScore($displayDate, $subjectId[$j], $classId[$i]);
+                    $des = record::getDes($displayDate, $subjectId[$j], $classId[$i]);
+                    if($des)
+                        $str .= " (".$des.")";
+                    $disStr[] = $str;
                 }
-                table::echoRow($className[$i], $score);
+                table::echoRow($className[$i], $disStr);
             }
             table::echoEnd();
         ?>

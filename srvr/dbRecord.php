@@ -21,13 +21,18 @@ class record {
         return $dbRow['rcrdScore'];
     }
 
-    public static function add($addDate, $addSub_id, $addCla_id, $addScorer_id, $addScore, $addTime) {
+    public static function getDes($srchDate, $srchSub_id, $srchCla_id) {
+        $dbRow = self::search($srchDate, $srchSub_id, $srchCla_id);
+        return $dbRow['rcrdDescription'];
+    }
+
+    public static function add($addDate, $addSub_id, $addCla_id, $addScorer_id, $addScore, $addTime, $addDes) {
         $dbRow = self::search($addDate, $addSub_id, $addCla_id);
         if ($dbRow == NULL) {
             $tmpSQL = "INSERT INTO record
                     (rcrdId, rcrdDate, rcrd_classId, rcrd_subjectId, rcrd_scorerId, rcrdScore, rcrdScoreTime, rcrdDescription)
                 VALUES
-                    (NULL, '".$addDate."','".$addCla_id."','".$addSub_id."','".$addScorer_id."','".$addScore."','".$addTime."','');";
+                    (NULL, '".$addDate."','".$addCla_id."','".$addSub_id."','".$addScorer_id."','".$addScore."','".$addTime."','".$addDes."');";
             //echo $tmpSQL."</br>";
             mysqli_query(dbManager::getConnection(), $tmpSQL);
         } else {
