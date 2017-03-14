@@ -29,15 +29,23 @@ class record {
     public static function add($addDate, $addSub_id, $addCla_id, $addScorer_id, $addScore, $addTime, $addDes) {
         $dbRow = self::search($addDate, $addSub_id, $addCla_id);
         if ($dbRow == NULL) {
+	if ($addScore != "") {
             $tmpSQL = "INSERT INTO record
                     (rcrdId, rcrdDate, rcrd_classId, rcrd_subjectId, rcrd_scorerId, rcrdScore, rcrdScoreTime, rcrdDescription)
                 VALUES
                     (NULL, '".$addDate."','".$addCla_id."','".$addSub_id."','".$addScorer_id."','".$addScore."','".$addTime."','".$addDes."');";
             //echo $tmpSQL."</br>";
             mysqli_query(dbManager::getConnection(), $tmpSQL);
+	}
         } else {
-            $tmpSQL = "UPDATE record SET rcrdScore='".$addScore."' WHERE rcrdId = ".$dbRow['rcrdId'];
-            //echo $tmpSQL."<br/>";
+		if ($addScore=="") 
+			$tmpSQL = "DELETE FROM record WHERE rcrdId = ".$dbRow['rcrdId'];
+		else
+			if($addDes=="")
+            			$tmpSQL = "UPDATE record SET rcrdScore='".$addScore."' , rcrdDescription='' WHERE rcrdId = ".$dbRow['rcrdId'];
+			else
+				$tmpSQL = "UPDATE record SET rcrdScore='".$addScore."' , rcrdDescription='".$addDes."' WHERE rcrdId = ".$dbRow['rcrdId'];
+            //echo $tmpSQL."</br>";
             mysqli_query(dbManager::getConnection(), $tmpSQL);
         }
     }
